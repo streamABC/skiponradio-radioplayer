@@ -1,0 +1,322 @@
+/**
+ * Version: 1.2.17
+ * 
+ *
+ * Media Queries
+ *
+ */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	.radioplayer-globalnav .search-box input,
+	.radioplayer-globalnav .search-box input:focus,
+	.radioplayer-globalnav .search-box input:hover {
+		font-size: 16px !important;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	.console-wrapper,
+	.radioplayer,
+	.radioplayer-globalnav {
+		width: 100%;
+	}
+}
+
+@media screen and (max-height: 664px) {
+	.no-overlay-items,
+	.error-message {
+		margin: 25px auto;
+	}
+}
+
+@media screen and (max-height: 568px) {
+	.no-overlay-items h1,
+	.no-overlay-items p {
+		margin: 5px 0;
+	}
+}
+
+@media screen and (max-width: 580px) {
+	.radioplayer-globalnav .search-box input:focus {
+		width: 155px;
+	}
+	.radioplayer-anno .rp-logo {
+		display: none
+	}
+	.radioplayer-anno .anno-text {
+		width: 90%
+	}
+	.radioplayer-globalnav a #rectangle {
+		width:68px;
+		height:29px;
+		border:1px solid #666666;
+		border-radius:4px;
+		position: absolute;
+		left: 40px;
+		top: 15px;
+	}
+
+	.radioplayer-globalnav a #rectangle span {
+		position: absolute;
+		top: 6px;
+		left: 22px;
+		color:#666666;
+		font-size:10px;
+	}
+
+	.radioplayer-globalnav a #rectangle #apps-download-img {
+		background: url(../img/apps-download-link-mobile.png) no-repeat;
+		padding: 18px;
+		position: absolute;
+		margin: 3px 0 0 3px;
+	}
+
+	.radioplayer-globalnav .search-box {
+		margin-left: -110px;
+	}
+	.radioplayer-globalnav .search-box fieldset {
+		width: 120px;
+	}
+	.radioplayer-globalnav .search-box input {
+		width: 70px;
+		padding-left: 3px;
+		font-size:11px !important;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	html.desktop, body.desktop,
+	html.desktop .console-wrapper, body.desktop .console-wrapper,
+	html.desktop .radioplayer, body.desktop .radioplayer,
+	html.desktop .radioplayer-globalnav, body.desktop .radioplayer-globalnav {
+		min-width: 480px;
+	}
+}
+
+@media screen and (max-device-width: 480px) {
+	.menu-container .tabs,
+	.menu-container .alphabet {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling: touch;
+	}
+	.menu-container .alphabet ul {
+		margin: 0 8px;
+	}
+	.menu-container .alphabet ul li a {
+		padding: 2px 8px 2px 2px;
+	}
+}
+
+@media screen and (max-device-width: 459px) {
+	.radioplayer-cookie-consent .cookie-consent-text {
+		font-size: 95%;
+		line-height: 1em;
+	}
+}
+
+@media screen and (max-device-width: 448px) {
+	.radioplayer-globalnav .rp-logo {
+		left: 32%;
+		margin: 10px 10px 10px 0;
+		background: url(../img/sprite.png) -360px -101px no-repeat;
+	}
+	.radioplayer-globalnav .menu-btn {
+		width: 40px;
+		height: 60px;
+	}
+	.radioplayer-globalnav .menu-btn span {
+		background-position: -320px -50px;
+		width: 16px;
+		height: 16px;
+	}
+	body.showing-overlay .radioplayer-globalnav .menu-btn span {
+		background-position: -339px -50px;
+	}
+
+	.radioplayer-globalnav .search-box {
+		margin-left: -110px;
+	}
+	.radioplayer-globalnav .search-box fieldset {
+		width: 120px;
+	}
+	.radioplayer-globalnav .search-box input {
+		width: 70px;
+		padding-left: 3px;
+		font-size:11px !important;
+	}
+
+	.radioplayer-globalnav .search-box.focus fieldset {
+		width: 190px;
+	}
+	.radioplayer-globalnav .search-box input:focus {
+		width: 155px;
+	}
+
+	.overlay-item-img {
+		width: 66px;
+		height: 38px;
+		margin-bottom: 5px;
+	}
+	.overlay-item-img img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+	.overlay-item .overlay-item-link:hover .overlay-item-img .play-icon,
+	.overlay-item .overlay-item-link:focus .overlay-item-img .play-icon {
+		background: url(../img/sprite.png) -400px 0 no-repeat;
+		display: block;
+		width: 65px;
+		height: 36px;
+		position: absolute;
+		left: 1px;
+	}
+	.overlay-item .title {
+		font-size: 120%;
+		margin-left: 83px;
+		width: 65%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.overlay-item .subtitle,
+	.overlay-item .programme-title,
+	.overlay-item .description {
+		font-size: 100%;
+	}
+
+	.overlay-item-data {
+		margin-left: 103px;
+		width: 65% !important;
+		float: none !important;
+	}
+	.overlay-item-extra .overlay-item-data {
+		margin-left: 0;
+		width: 100%;
+	}
+	.overlay-item-extra {
+		padding-left: 83px;
+	}
+}
+
+@media screen and (max-device-width: 420px) {
+	.radioplayer-globalnav .rp-logo.reduced {
+		margin: 10px 10px 10px 0;
+		width:35px;
+	}
+}
+
+@media only screen and (max-device-width: 320px) {
+	html, body,
+	.radioplayer,
+	.radioplayer-globalnav {
+		min-width: 320px;
+	}
+}
+
+@media only screen and (max-device-width: 448px) and (-webkit-min-device-pixel-ratio: 2)  {
+	.optimise {
+		image-rendering: optimizeSpeed;
+		image-rendering: -moz-crisp-edges;
+		image-rendering: -o-crisp-edges;
+		image-rendering: -webkit-optimize-contrast;
+		image-rendering: optimize-contrast;
+		-ms-interpolation-mode: nearest-neighbor;
+	}
+
+	.overlay-item .overlay-item-link:hover .overlay-item-img .play-icon,
+	.overlay-item .overlay-item-link:focus .overlay-item-img .play-icon {
+		background-image: url(../img/sprite_2x.png) !important;
+		background-size: 480px 350px;
+	}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2)  {
+	.radioplayer-globalnav .menu-btn span,
+	.radioplayer-globalnav .search-box #search-button span,
+	.radioplayer-globalnav .search-box #search-clear span,
+	.radioplayer-globalnav .rp-logo,
+	#menu-nav-toggle li a .menu_toggle, #search-nav-toggle li a .menu_toggle,
+	#menu-nav-toggle li a .menu_toggle.nav-expanded, #search-nav-toggle li a .menu_toggle.nav-expanded,
+	.point-prompt,
+	.radioplayer-anno .hide-anno,
+	.radioplayer-cookie-consent .hide-cookie-consent,
+	.overlay-item .overlay-item-link:hover .overlay-item-img .play-icon,
+	.overlay-item .overlay-item-link:focus .overlay-item-img .play-icon,
+	.overlay-item .more-toggle span,
+	.overlay-item .toggle-mystations button span,
+	.overlay-item-extra-cont .overlay-item-song i,
+	.overlay-item-extra-cont .recommend-factors i,
+	#play-controls button span,
+	#toggle-mystations span,
+	#volume-control,
+	.station-group a i {
+		background-image: url(../img/sprite_2x.png) !important;
+		background-size: 480px 350px;
+	}
+
+	.overlay-item .toggle-mystations button.animating span,
+	.overlay-item .toggle-mystations button.animating:hover span,
+	#toggle-mystations.animating span,
+	#toggle-mystations.animating:hover span {
+		background-image: url(../img/heart-sprite_2x.png) !important;
+		background-size: 64px 475px;
+	}
+
+	.no-overlay-items h1,
+	.radioplayer-erroroverlay h1,
+	.error-message.no-results h1,
+	.error-message.fail h1 {
+		background-image: url(../img/error-icons-sprite_3x.png) !important;
+		background-size: 70px 466px;
+	}
+}
+
+@media only screen and (max-device-width: 448px) and (-webkit-min-device-pixel-ratio: 3)  {
+	.overlay-item .overlay-item-link:hover .overlay-item-img .play-icon,
+	.overlay-item .overlay-item-link:focus .overlay-item-img .play-icon {
+		background-image: url(../img/sprite_3x.png) !important;
+		background-size:480px 350px;
+	}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3)  {
+	.radioplayer-globalnav .menu-btn span,
+	.radioplayer-globalnav .search-box #search-button span,
+	.radioplayer-globalnav .search-box #search-clear span,
+	.radioplayer-globalnav .rp-logo,
+	#menu-nav-toggle li a .menu_toggle, #search-nav-toggle li a .menu_toggle,
+	#menu-nav-toggle li a .menu_toggle.nav-expanded, #search-nav-toggle li a .menu_toggle.nav-expanded,
+	.point-prompt,
+	.radioplayer-anno .hide-anno,
+	.radioplayer-cookie-consent .hide-cookie-consent,
+	.overlay-item .overlay-item-link:hover .overlay-item-img .play-icon,
+	.overlay-item .overlay-item-link:focus .overlay-item-img .play-icon,
+	.overlay-item .more-toggle span,
+	.overlay-item .toggle-mystations button span,
+	.overlay-item-extra-cont .overlay-item-song i,
+	.overlay-item-extra-cont .recommend-factors i,
+	#play-controls button span,
+	#toggle-mystations span,
+	#volume-control,
+	.station-group a i {
+		background-image: url(../img/sprite_3x.png) !important;
+		background-size: 480px 350px;
+	}
+
+	.overlay-item .toggle-mystations button.animating span,
+	.overlay-item .toggle-mystations button.animating:hover span,
+	#toggle-mystations.animating span,
+	#toggle-mystations.animating:hover span {
+		background-image: url(../img/heart-sprite_3x.png) !important;
+		background-size: 64px 475px;
+	}
+
+	.no-overlay-items h1,
+	.radioplayer-erroroverlay h1,
+	.error-message.no-results h1,
+	.error-message.fail h1 {
+		background-image: url(../img/error-icons-sprite_3x.png) !important;
+		background-size: 70px 466px;
+	}
+}

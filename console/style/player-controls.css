@@ -1,0 +1,199 @@
+#controls { position:relative; float:right; width:133px; height:50px; }
+#controls.no-volume { width:80px; }
+
+/**
+ * Version: 1.2.17
+ * 
+ *
+ * Play / Stop / Pause
+ *
+ */
+
+#play-controls { position:absolute; left:30px; top:0; }
+#play-controls button { cursor:pointer; width:50px; height:50px; border:0; background-color:transparent; padding:0; }
+#play-controls button span { display:block; width:50px; height:50px; background-image:url(../img/sprite.png); background-repeat:no-repeat; text-indent:-9999px; }
+body.rp-mouseactivity #play-controls button { outline:none; }
+
+/* button icon position fix for older ie */
+html.lte8 #play-controls button { position:relative; overflow:visible; }
+html.lte8 #play-controls button span { position:absolute; left:0; top:0; }
+
+#play span { background-position:0 0; }
+#play:hover span,
+#play:active span { background-position:0 -50px; }
+
+#pause { display:none; }
+#pause span { background-position:-100px 0px; }
+#pause:hover span,
+#pause:active span { background-position:-100px -50px; }
+
+#stop { display:none; }
+#stop span { background-position:-50px 0px; }
+#stop:hover span,
+#stop:active span { background-position:-50px -50px; }
+
+.radioplayer.dark-theme #play span { background-position:0 -100px; }
+.radioplayer.dark-theme #play:hover span,
+.radioplayer.dark-theme #play:active span { background-position:0 -150px; }
+
+.radioplayer.dark-theme #pause span { background-position:-100px -100px; }
+.radioplayer.dark-theme #pause:hover span,
+.radioplayer.dark-theme #pause:active span { background-position:-100px -150px; }
+
+.radioplayer.dark-theme #stop span { background-position:-50px -100px; }
+.radioplayer.dark-theme #stop:hover span,
+.radioplayer.dark-theme #stop:active span { background-position:-50px -150px; }
+
+
+/**
+ *
+ * Toggle my station status
+ *
+ */
+
+#mystations-toggle { position:absolute; left:0; top:13px; }
+#mystations-toggle.hidden { display:none; }
+
+#toggle-mystations { display:block; width:32px; height:25px; cursor:pointer; border:0; background-color:transparent; padding:0; }
+body.rp-mouseactivity #toggle-mystations { outline:none; }
+#toggle-mystations span { display:block; width:32px; height:25px; background-image:url(../img/sprite.png); background-repeat:no-repeat; background-position:0 -250px; text-indent:-9999px; }
+#toggle-mystations:hover span { background-position:-50px -250px; }
+#toggle-mystations.in-mystations span { background-position:-100px -250px; }
+#toggle-mystations.in-mystations:hover span { background-position:-100px -250px; }
+
+.radioplayer.dark-theme #toggle-mystations span { background-position:0 -275px; }
+.radioplayer.dark-theme #toggle-mystations:hover span { background-position:-50px -275px; }
+.radioplayer.dark-theme #toggle-mystations.in-mystations span { background-position:-100px -275px; }
+.radioplayer.dark-theme #toggle-mystations.in-mystations:hover span { background-position:-100px -275px; }
+
+#toggle-mystations.animating span,
+#toggle-mystations.animating:hover span { background-image:url(../img/heart-sprite.png); }
+
+/* button icon position fix for older ie */
+html.lte8 #toggle-mystations { position:relative; overflow:visible; }
+html.lte8 #toggle-mystations span { position:absolute; left:0; top:0; }
+
+
+/**
+ *
+ * Volume
+ *
+ */
+
+#volume-controls { position:absolute; left:78px; top:1px; }
+
+#volume-control { width:40px; height:50px; cursor:pointer; background-image:url(../img/sprite.png); background-repeat:no-repeat; background-position:-5000px 0; }
+
+#volume-control.hidden{ display:none }
+#volume-control.muted { background-position:-200px -150px; }
+#volume-control.p20 { background-position:-240px -150px; }
+#volume-control.p40 { background-position:-280px -150px; }
+#volume-control.p60 { background-position:-320px -150px; }
+#volume-control.p80 { background-position:-360px -150px; }
+#volume-control.p100 { background-position:-400px -150px; }
+
+#volume-control.muted.hover { background-position:-200px -150px; }
+#volume-control.p20.hover { background-position:-240px -200px; }
+#volume-control.p40.hover { background-position:-280px -200px; }
+#volume-control.p60.hover { background-position:-320px -200px; }
+#volume-control.p80.hover { background-position:-360px -200px; }
+#volume-control.p100.hover { background-position:-400px -200px; }
+
+.radioplayer.dark-theme #volume-control.muted { background-position:-200px -250px; }
+.radioplayer.dark-theme #volume-control.p20 { background-position:-240px -250px; }
+.radioplayer.dark-theme #volume-control.p40 { background-position:-280px -250px; }
+.radioplayer.dark-theme #volume-control.p60 { background-position:-320px -250px; }
+.radioplayer.dark-theme #volume-control.p80 { background-position:-360px -250px; }
+.radioplayer.dark-theme #volume-control.p100 { background-position:-400px -250px; }
+
+.radioplayer.dark-theme #volume-control.muted.hover { background-position:-200px -250px; }
+.radioplayer.dark-theme #volume-control.p20.hover { background-position:-240px -300px; }
+.radioplayer.dark-theme #volume-control.p40.hover { background-position:-280px -300px; }
+.radioplayer.dark-theme #volume-control.p60.hover { background-position:-320px -300px; }
+.radioplayer.dark-theme #volume-control.p80.hover { background-position:-360px -300px; }
+.radioplayer.dark-theme #volume-control.p100.hover { background-position:-400px -300px; }
+
+#volume-control.disabled { background-position:-440px -150px; }
+.radioplayer.dark-theme #volume-control.disabled { background-position:-440px -250px; }
+
+#volume-controls button.access:focus { left:auto; right:0; width:auto; height:auto; top:0; z-index:1; }
+
+/**
+ *
+ * Now Playing Strip
+ *
+ */
+.now-playing-strip { position:relative; background:url(../img/playing-strip-bg-light.png) 0 0 repeat; padding:2px; width:100%; height:14px; float:left; margin-top:8px; color:#fff; font-size:11px; }
+.radioplayer.dark-theme .now-playing-strip { background:url(../img/playing-strip-bg-dark.png) 0 0 repeat; }
+.now-playing-strip .live-indicator { color:#fff; background-color:#000; font-weight:bold; position:absolute; top:2px; padding:2px; text-transform:uppercase; cursor:default; height:10px; line-height:10px; left:2px; }
+.now-playing-strip .scrolling-container { overflow:hidden; padding-top:1px; height:13px; position:relative; line-height:1.1em; width:78.2%; }
+
+.now-playing-strip .scrolling-text { white-space:nowrap; cursor:default; text-overflow:ellipsis; overflow:hidden; padding-left:4px; }
+.now-playing-strip.mouse-over { text-overflow:clip; }
+.now-playing-strip.mouse-over .scrolling-text { position:absolute; left:4px; top:1px; padding-left:0; text-overflow:clip; }
+.now-playing-strip .song-action { color:#000; background-color:#fff; text-decoration:none; font-weight:bold; padding:2px 4px; text-transform:uppercase; position:absolute; right:6px; top:2px; height:10px; }
+.now-playing-strip .song-action:hover { outline:1px solid #000; }
+
+#live-strip.loading .live-info { visibility:hidden; }
+#live-strip.loading .loading-indicator { font-weight:bold; float:left; padding:2px; cursor:default; height:10px; line-height:10px; display:block; }
+#live-strip .loading-indicator { display:none; }
+
+/**
+ *
+ * Scrub / progress bar
+ *
+ */
+
+/*#live-strip { display:none; }*/
+#od-strip { display:none; }
+
+#od-strip button.access:focus { left:auto; right:0; width:auto; height:auto; top:0; z-index:1; }
+
+#progress-scrubber-background {
+	position:relative;
+	top:0;
+	left:90px;
+	width:1170px;
+	height:18px;
+	-webkit-touch-callout: none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-o-user-select:none;
+	user-select:none; 
+}
+
+#progress-scrubber-playback-bar {
+	position:absolute;
+	clip:rect(0px 1230px 18px 0px);
+	float:none;
+	width:0;
+	height:18px;
+	left:0;
+	top:0;
+	background-color:#000;
+	opacity:0.3;
+	filter:alpha(opacity=30); /* For IE8 and earlier */
+} 
+
+#progress-scrubber-load-bar {
+	position:absolute;
+	clip:rect(0px 1230px 18px 0px);
+	float:none;
+	width:0;
+	height:18px;
+	left:0;
+	top:0;
+	background-color:#000;
+	opacity:0.2;
+	filter:alpha(opacity=20); /* For IE8 and earlier */
+	cursor:pointer;
+}
+
+#progress-scrubber-handle {	cursor:pointer; top:0;	left:0;	position:absolute; width:6px; height:16px; background-color:#fff; border:1px solid #bbb; display:none; }
+#progress-scrubber-handle:active { background-position:-300px -20px; }
+
+#duration {	top:4px; left:4px; position:absolute; width:85px; color:#fff; font-family:"Arial"; font-size:100%; font-weight:bold; display:block; }
+
+#od-title { width:100%; position:absolute; right:4px; top:1px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; line-height:1.1em; text-align:right; }
+

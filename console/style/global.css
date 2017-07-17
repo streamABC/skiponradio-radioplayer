@@ -1,0 +1,271 @@
+/**
+ * Version: 1.2.17
+ * 
+ * WARNING - The entire console inherits from these values.
+ * It is strongly recommended to not make changes to the following styling.
+ */
+html, body { min-width:320px; height:100%; margin:0; padding:0; }
+body { font-family:Arial, sans-serif; font-size:62.5%; line-height:100%; overflow:visible; background-color:#272727; }
+a { color:#222; }
+p { margin:0; padding:0; font-size:1.1em; line-height:120%; }
+
+.access { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+.console-wrapper { height:100%; box-sizing:border-box; }
+.radioplayer { width:950px; max-height:877px; height:100%; margin:0 auto; position:relative; }
+
+.radioplayer-head { position:relative; overflow:hidden; margin:9px 10px 7px; }
+.radioplayer-head .logo { position:relative; overflow:hidden; margin:10px 0 5px 0; display:block; }
+.radioplayer-head .station-logo { float:left; width:180px; background-position:0 0;	background-repeat:no-repeat; }
+.radioplayer-head .emp-container { /* clear:both; height:43px;*/ }
+.radioplayer-head .stn-logo { position:relative; width:215px; height:50px; text-indent:-9999px; display:block; float:left; }
+.radioplayer-head .play-controls { display:block; position:absolute; right:10px; top:15px; width:104px; height:40px; }
+
+.radioplayer-head .real-emp-container { margin-left:9px; }
+
+.radioplayer-localwrapper { position:absolute; overflow:auto; top:61px; bottom:0; width:100%; }
+
+.radioplayer-body { position:relative; margin:0 10px 8px 10px; left:0; right:0; min-height:486px; }
+
+.radioplayer-plugin { overflow:auto; margin:0 auto; }
+.radioplayer-plugin img { max-width:100%; height:auto; display:block; border:0; }
+
+.radioplayer-prerolloverlay { position:absolute; top:0; right:0; bottom:0; left:0; }
+.radioplayer-prerolloverlay iframe { position:absolute; top:0; left:0; border:0; width:100%; height:100%; }
+
+.radioplayer-emp-container { position:absolute; left:-9999px; width:0; height:0; }
+
+
+/**
+ * 
+ * Global Nav
+ *
+ */
+
+.radioplayer-globalnav-wrapper { position:absolute; overflow:hidden; width:100%; }
+
+.radioplayer-globalnav { position:relative; overflow:hidden; left:0; top:0; background-color:#eeeeee; border-bottom:1px solid #ccc; }
+
+/* Menu Button */
+.radioplayer-globalnav .menu-btn { float:left; width:50px; height:60px; cursor:pointer; border:0; padding:0; margin:0; background:none; }
+.radioplayer-globalnav .menu-btn:active { background-color:#d7d5d5; }
+.radioplayer-globalnav .menu-btn span { display:block; background:url(../img/sprite.png) -250px -50px no-repeat; width:20px; height:20px; text-indent:-9999px; margin:13px; }
+body.rp-mouseactivity .radioplayer-globalnav .menu-btn { outline:none; }
+
+  /* button icon position fix for older ie */
+html.lte8 .radioplayer-globalnav .menu-btn { position:relative; overflow:visible; }
+html.lte8 .radioplayer-globalnav .menu-btn span { margin:0; position:absolute; left:13px; top:13px; }
+
+/* App Buttons */
+.radioplayer-globalnav a #rectangle {
+    width:133px;
+    height:38px;
+    border:1px solid #666666;
+    border-radius:4px;
+    position: absolute;
+    left: 50px;
+    top: 11px;
+}
+
+.radioplayer-globalnav a #rectangle span {
+    position: absolute;
+    top: 14px;
+    left: 35px;
+    color:#666666;
+}
+
+.radioplayer-globalnav a #rectangle #apps-download-img {
+    background: url(../img/apps-download-link.png) no-repeat;
+    padding: 18px;
+    position: absolute;
+    margin: 3px 0 0 8px;
+}
+
+.invisible {
+    display: none;
+}
+
+/* Search Box */
+.radioplayer-globalnav .search-box { float:right; margin:15px 10px 0 0; position:relative; }
+.radioplayer-globalnav .search-box fieldset { padding:0; margin:0; width:200px; height:29px; background-color:#fff; border:1px solid #d6d3d3; }
+.radioplayer-globalnav .search-box input { border:0; width:165px; height:23px; line-height:23px; padding:3px 0 3px 8px; background:none; color:#b0b0b0; font-size:13px; }
+.radioplayer-globalnav .search-box.active input { color:#222; }
+.radioplayer-globalnav .search-box input::-ms-clear { display:none; /* Hide the cross added by IE 10 */ }
+body.rp-mouseactivity .radioplayer-globalnav .search-box input { outline:none; }
+
+.radioplayer-globalnav .search-box button { width:30px; height:29px; padding:0; margin:0; position:absolute; right:1px; top:1px; border:0; cursor:pointer; background-color:transparent; overflow:visible; }
+.radioplayer-globalnav .search-box button span { display:block; text-indent:-9999px; }
+body.rp-mouseactivity .radioplayer-globalnav .search-box button { outline:none; }
+
+.radioplayer-globalnav .search-box #search-button span { background:url(../img/sprite.png) -150px -50px no-repeat; width:13px; height:13px; margin:9px 8px 7px 9px; }
+.radioplayer-globalnav .search-box.active #search-button span { background-position:-170px -50px; }
+
+.radioplayer-globalnav .search-box #search-clear { display:none; }
+.radioplayer-globalnav .search-box #search-clear span { background:url(../img/sprite.png) -150px -100px no-repeat; width:9px; height:9px; margin:10px 10px 10px 11px; }
+
+  /* button icon position fix for older ie */
+html.lte8 .radioplayer-globalnav .search-box button { overflow:visible; }
+html.lte8 .radioplayer-globalnav .search-box #search-button span { margin:0; position:absolute; left:9px; top:9px; }
+html.lte8 .radioplayer-globalnav .search-box #search-clear span { margin:0; position:absolute; left:11px; top:10px; }
+
+.radioplayer-globalnav .rp-logo { float:left; left:50%; position:absolute; margin:10px 10px 10px -72px; width:144px; height:40px; cursor:pointer; text-indent:-9999px; background:url(../img/sprite.png) -200px -101px no-repeat; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
+
+/**
+ * 
+ * General Overlay Containers and Furniture
+ *
+ */
+
+.overlay-container { display:none; position:absolute; top:61px; bottom:81px; width:100%; overflow:hidden; z-index:900; }
+
+.overlay-container .tabs { background-color:#f4f3f3; border-bottom: 1px solid #dddddd; width:100%; height:46px; position:absolute; }
+.overlay-container .tabs ul { margin:0; padding:0; list-style:none; }
+.overlay-container .tabs ul li { float:left; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; height:46px; }
+.overlay-container .tabs ul li a { display:block; color:#333; padding:15px 0; line-height:16px; text-transform:uppercase; text-decoration:none; font-weight:bold; font-size:120%; }
+.overlay-container .tabs ul li a span { display:block; border-left:1px solid #b2b2b2; text-align:center; padding:0 15px; }
+.overlay-container .tabs ul li.on a span { border-left:1px solid #333; }
+.overlay-container .tabs ul li.no-divide a span { border-left:1px solid #f4f3f3; }
+.overlay-container .tabs ul li.first a span { border-left:none; }
+.overlay-container .tabs ul li.two-lines a { padding:7px 0; }
+
+.overlay-container .tab-container { display:none; }
+.overlay-container .tab-container.showing { display:block; height:100%; }
+.overlay-container .tabs-wrapper, 
+.overlay-container .search-wrapper { top:48px; bottom:0; width:100%; position:absolute; }
+.overlay-container .tabs-wrapper .spinner, 
+.overlay-container .search-wrapper .spinner { display:none; width:32px; height:32px; position:absolute; left:50%; margin-left:-16px; bottom:50px; }
+
+.scrollable-wrapper { overflow:auto; height:100%; position:relative; /* <- this is an IE7 fix */ }
+.scrollable-wrapper.has-error { background-color:#f6f6f6; }
+
+/**
+ * 
+ * Responsive Navigation Toggle
+ *
+ */
+[role="navigation"] { z-index:100; }
+#menu-nav-toggle, #search-nav-toggle { display:none; color:#333; padding:0; line-height:16px; text-transform:uppercase; text-decoration:none; font-weight:bold; }
+#menu-nav-toggle li a, #search-nav-toggle li a { padding:13px 0 13px 10px; background-color:#333; color:#fff; }
+#menu-nav-toggle li a .menu_toggle, #search-nav-toggle li a .menu_toggle { display:block; float:right; background:url(../img/sprite.png) -310px -50px no-repeat; height:19px; margin:-3px 3px 0 0;  }
+#menu-nav-toggle li a .menu_toggle.nav-expanded, #search-nav-toggle li a .menu_toggle.nav-expanded { background:url(../img/sprite.png) -350px -50px no-repeat;  }
+
+/**
+ * 
+ * Menu
+ *
+ */
+
+.menu-container { display:none; height:100%; min-height:100%; background-color:#fff; }
+.menu-container ul { width:500px; }
+.search-container ul { width:100%; }
+
+.menu-container .alphabet { width:100%; background-color:#fff; height:10px; padding:17px 0; text-align:center; }
+.menu-container .alphabet ul { display:inline; margin:0; padding:0; list-style:none; }
+.menu-container .alphabet ul li { display:inline; }
+.menu-container .alphabet ul li a { color:#333; text-decoration:none; font-weight:bold; padding:2px 4px 2px 2px; font-size:160%; }
+.menu-container .alphabet ul li a:hover { color:#000; }
+.menu-container .alphabet ul li.no-stations a { color:#575757; }
+.menu-container .alphabet ul li.no-stations a:hover { color:#000; }
+
+.menu-container .azlist-container { height:100%; }
+
+.menu-container .azlist-container .letter-divide { background-color:#ddd; border-bottom:1px solid #aaa; color:#333; padding:5px; font-size:108%; font-weight:bold; }
+
+.menu-container .azlist-container .no-stations-item { text-align:center; font-size:108%; padding:10px; }
+
+.menu-container .sticky-divide-wrapper { position:absolute; top:44px; bottom:0; width:100%; overflow:hidden; }
+.menu-container .sticky-divide { display:none; background-color:#ddd; border-bottom:1px solid #aaa; color:#333; padding:5px; font-size:108%; font-weight:bold; position:absolute; z-index:1; }
+
+
+/**
+ *
+ * My Stations - No stations message
+ *
+ */
+
+.no-overlay-items { box-shadow:0 0 4px rgba(0, 0, 0, 0.4); border-radius:5px; width:75%; background-color:#fff; margin:95px auto; padding:20px 30px; text-align:center; }
+.no-overlay-items h1 { font-weight:normal; font-size:22px; background:url(../img/error-icons-sprite.png) 50% 0 no-repeat; color:#333; padding-top:75px; margin:20px 0 20px 0; line-height:1.1em; }
+.no-overlay-items p { font-size:16px; color:#838383; margin:20px 0; }
+
+.menu-container .tab-container.has-no-items { background-color:#f6f6f6; }
+
+
+/**
+ *
+ * Point Prompt
+ *
+ */
+
+.point-prompt { position:absolute; height:40px; color:#000; padding:4px 10px 0 37px; font-size:116%; line-height:1.3em; background-image:url(../img/sprite.png); background-repeat:no-repeat; }
+.point-prompt.press-play-prompt { left:-95px; top:4px; background-position:0 -200px; width:95px; }
+.point-prompt.volume-prompt { left:-186px; top:4px; background-position:0 -300px; width:145px; font-size:94%; }
+.point-prompt  .prompt-text { }
+
+/**
+ *
+ * Announcement
+ *
+ */
+
+.radioplayer-anno { position:absolute; top:0; left:0; width:100%; height:78px; z-index:1; }
+.radioplayer-anno:before { content:" "; position:absolute; top:0; left:0; width:100%; height:78px; background:url(../img/notification-bg.png) 0 0 repeat; z-index:-1; }
+.radioplayer-anno:after { content:" "; position:absolute; top:0; left:0; width:100%; height:78px; background:url(../img/notification-bg-tab.png) right top no-repeat; z-index:-1; }
+.radioplayer-anno .anno-text { padding:6px 10px; width:75%; height:45px; color:#fff; font-size:108%; line-height:1.2em; }
+.radioplayer-anno .anno-text a { color:#fff; }
+.radioplayer-anno .hide-anno { display:block; position:absolute; right:8px; bottom:0; background:url(../img/sprite.png) -142px -199px no-repeat; width:26px; height:16px; text-indent:-9999px; }
+
+
+/**
+ *
+ * Cookie Consent
+ *
+ */
+ 
+.radioplayer-cookie-consent { position:absolute; top:0; left:0; width:100%; z-index:1; }
+.radioplayer-cookie-consent:before { content:" "; position:absolute; top:0; left:0; width:100%; height:78px; background:url(../img/notification-bg.png) 0 0 repeat; z-index:-1; }
+.radioplayer-cookie-consent .cookie-consent-button { float:right; margin:5px; padding:8px 15px; display:block; position:absolute; right:0; background-color:#ffff00; line-height:1em; font-size:108%; color:#383838; font-weight:bold; text-decoration:none; border-radius:5px; -webkit-border-radius:5px; }
+.radioplayer-cookie-consent .cookie-consent-button:hover,
+.radioplayer-cookie-consent .cookie-consent-button:active { background-color:#ffff99; }
+.radioplayer-cookie-consent .cookie-consent-text { padding:6px 10px; width:82%; color:#fff; font-size:108%; line-height:1.2em; }
+.radioplayer-cookie-consent .cookie-consent-text a { color:#fff; }
+.radioplayer-cookie-consent .hide-cookie-consent { display:block; position:absolute; right:8px; bottom:0; background:url(../img/sprite.png) -142px -199px no-repeat; width:26px; height:16px; text-indent:-9999px; }
+ 
+ 
+/**
+ *
+ * Stream Error
+ *
+ */
+
+.radioplayer-erroroverlay { top:0; right:0; bottom:0; left:0; background-color:#fff; border:1px solid #838383; text-align:center; margin:0 10px 8px 10px; }
+.radioplayer-erroroverlay h1 { font-weight:normal; color:#333; padding-top:100px; margin:20px 0 25px 0; line-height:1.1em; font-size:22px; background:url(../img/error-icons-sprite.png) 50% -400px no-repeat; }
+.radioplayer-erroroverlay p { font-size:16px; color:#838383; margin:25px 5px; }
+
+
+/**
+ *
+ * Adjustments for when overlay is showing
+ *
+ */
+
+body.showing-overlay .radioplayer-head { margin:0; padding:8px 10px 8px; z-index:901; border-top:1px outset #222; }
+body.showing-overlay .radioplayer-head .stn-logo { }
+body.showing-overlay .radioplayer-head .now-playing-strip { display:none; }
+body.showing-overlay .radioplayer-globalnav .menu-btn span { background-position:-279px -50px; }
+body.showing-overlay .radioplayer-globalnav .menu-btn:active { background-color:#d7d5d5; }
+body.showing-overlay .radioplayer-body { position:absolute; top:-9999px; }
+body.showing-overlay .radioplayer-localwrapper { top:auto; bottom:0; height:67px }
+body.showing-overlay .overlay-container { display:block; bottom:67px; }
+body.showing-overlay #controls { }
+body.showing-search .search-container { display:block; height:100%; }
+body.showing-suggest .suggest-container { display:block; }
+body.showing-menu .menu-container { display:block; }
+
+
+/**
+ *
+ * Hidden iframes
+ *
+ */
+
+iframe.crossdomain-iframe  { height:1px; width:1px; position:absolute; top:0; left:-2000px;	visibility:hidden; }

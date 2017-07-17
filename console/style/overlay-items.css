@@ -1,0 +1,102 @@
+/**
+ * Version: 1.2.17
+ * 
+ *
+ * Document   : overlay-items.css
+ * Description: layout and styles for individual results in overlays
+ *
+ */
+.overlay-item { position:relative; min-height:60px; overflow:hidden; border-bottom:1px solid #dddddd; }
+.overlay-item-img { width:88px; height:50px; float:left; margin-right:15px; }
+.overlay-item-data { float:left; width:75%; }
+
+.overlay-item .title { font-size:14px; color:#333; padding-bottom:1px; line-height:110%; display:block; margin-left:103px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+
+.overlay-item .subtitle, 
+.overlay-item .programme-title { font-size:12px; color:#333; padding-bottom:2px; }
+
+.overlay-item .subtitle.truncate, 
+.overlay-item .programme-title.truncate { overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+
+.overlay-item .description { font-size:12px; color:#8D8D8D; }
+.overlay-item .q-sel { color:#000; }
+.overlay-item .overlay-item-link { text-decoration:none; color:#333; cursor:pointer; }
+.overlay-item .overlay-item-link:hover,
+.overlay-item .overlay-item-link:focus { text-decoration:underline; }
+.overlay-item .overlay-item-link:focus .title { outline:1px dotted #000; }
+.overlay-item .overlay-item-link .overlay-item-img { position:relative; }
+.overlay-item .overlay-item-link .overlay-item-img img { border:1px solid #e3e3e3; }
+.overlay-item .overlay-item-link:hover .overlay-item-img .play-icon,
+.overlay-item .overlay-item-link:focus .overlay-item-img .play-icon { background:url(../img/sprite.png) -280px 0 no-repeat; display:block; width:86px; height:48px; position:absolute; left:1px; top:1px; }
+.overlay-item .overlay-item-link:hover .overlay-item-img img,
+.overlay-item .overlay-item-link:focus .overlay-item-img img { border-color:#bbb; }
+
+
+/* More Toggle - arrow to expand each result */
+.overlay-item .more-toggle { display:block; width:16px; height:9px; padding:7px 5px; position:absolute; bottom:3px; right:10px; cursor:pointer; }
+.overlay-item .more-toggle span { background:url(../img/sprite.png) -150px 0 no-repeat; display:block; width:16px; height:9px; text-indent:-9999px; }
+.overlay-item .more-toggle:hover span { background-position:-150px -12px; }
+.overlay-item.expanded .more-toggle span { background-position:-150px -24px; display:block; }
+.overlay-item.expanded .more-toggle:hover span { background-position:-150px -36px; display:block; }
+
+
+/* My Station Toggle - Heart icon */
+.overlay-item .toggle-mystations { width:32px; height:25px; position:absolute; right:7px; top:7px; }
+.overlay-item .toggle-mystations button { display:block; width:32px; height:25px; cursor:pointer; border:0; padding:0; background:transparent; }
+
+/*noinspection CssOptimizeSimilarProperties*/
+.overlay-item .toggle-mystations button span {
+	text-indent:-9999px; 
+	display:block; 
+	width:32px; 
+	height:25px;
+	background-image: url(../img/sprite.png);
+	background-position: 0 -275px;
+	background-repeat: no-repeat;
+}
+
+.overlay-item .toggle-mystations button:hover span { background-position:-50px -275px; }
+.overlay-item.in-mystations .toggle-mystations button span { background-position:-100px -275px; }
+.overlay-item.animating-mystations button { display:none; }
+
+.overlay-item .toggle-mystations button.animating span,
+.overlay-item .toggle-mystations button.animating:hover span { background-image:url(../img/heart-sprite.png); }
+
+body.rp-mouseactivity .overlay-item .toggle-mystations button { outline:none; }
+
+
+/* button icon position fix for older ie */
+html.lte8 .overlay-item .toggle-mystations button { position:relative; overflow:visible; }
+html.lte8 .overlay-item .toggle-mystations button span { position:absolute; left:0; top:0; }
+
+
+/* Expanded results */
+.overlay-item.expanded { background-color:#fff; }
+.overlay-item.prevExpanded { }
+.overlay-item.hover.expanded { background-color:#fff; }
+
+.overlay-item-initial { overflow:hidden; position:relative; padding:10px; }
+
+.overlay-item-extra-cont { display:none; background-color:#f4f3f3; }
+.overlay-item-extra-cont .padding-wrap { padding:10px; }
+
+.overlay-item-extra { clear:both; margin-top:12px; border-top:1px solid #c6c4c5; padding-top:12px; padding-left:103px; overflow:hidden; position:relative; }
+.overlay-item-extra.hasImage { padding-left:0; }
+.overlay-item-extra.no-top-border { margin-top:0; border-top:0; padding-top:0; }
+
+
+/* Live vs Catch Up tags, plus the time since broadcast */
+.overlay-item .broadcast-info { padding-top:8px; }
+.overlay-item .broadcast-info .status { background-color:#393939; color:#fff; padding:2px; box-sizing:border-box; font-size:0.9em; font-weight:bold; text-transform:uppercase;  }
+.overlay-item .broadcast-info .broadcast-time { font-style:italic; }
+
+
+/* Song */
+.overlay-item-extra-cont .overlay-item-song { padding:12px 0 5px 30px; margin-top:12px; border-top:1px solid #c6c4c5; text-transform:uppercase; color:#666; position:relative; height:9px; }
+.overlay-item-extra-cont .overlay-item-song i { display:block; background:url(../img/sprite.png) -200px -50px no-repeat; width:19px; height:19px; position:absolute; left:0; top:7px; }
+.overlay-item-extra-cont .overlay-item-song.no-top-border { margin-top:0; border-top:0; padding-top:0; }
+
+
+/* Recommended factors */
+.overlay-item-extra-cont .recommend-factors { padding:5px 0 5px 30px; text-transform:uppercase; color:#666; position:relative; height:9px; }
+.overlay-item-extra-cont .recommend-factors i { display:block; background:url(../img/sprite.png) -220px -50px no-repeat; width:19px; height:19px; position:absolute; left:0; top:0; }

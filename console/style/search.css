@@ -1,0 +1,87 @@
+/**
+ * Version: 1.2.17
+ * 
+ *
+ * Suggested Results
+ * Document   : search.css
+ * Description: specific styling for the search results
+ *
+ */
+
+.suggest-container { display:none; height:100%; background-color:rgba(0, 0, 0, 0.5); }
+.suggest-container .scrollable-wrapper { overflow:auto; height:100%; }
+
+.suggest-item { border-bottom:1px solid #c6c6c6; background-color:#fff; }
+.suggest-item a { display:block; padding:8px 10px 8px 64px; position:relative; min-height:30px; text-decoration:none; outline:none; }
+.suggest-item a:hover { background-color:#f4f4f4; }
+.suggest-item.on a { background-color:#f4f4f4; }
+.suggest-item .image { position:absolute; left:10px; top:10px; width:43px; height:24px; border:1px solid #e3e3e3; }
+.suggest-item .name { display:block; font-size:14px; color:#333; line-height:1.2em; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; padding-top:6px; }
+.suggest-item .prog-name { display:block; font-size:12px; color:#646464; padding-top:1px; line-height:1.2em; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.suggest-item.has-prog-name .name { padding-top:0; }
+
+.suggest-divider { background-color:#ddd; color:#333; padding:5px; font-size:108%; font-weight:bold; text-transform:uppercase; }
+
+.suggest-item.show-all {  }
+.suggest-item.show-all a { display:block; padding:10px 5px; font-size:116%; text-align:center; text-decoration:none; min-height:0; }
+.suggest-item.show-all a:hover { background-color:#eee; }
+
+
+/**
+ *
+ * Main Results
+ *
+ */
+
+.search-container { display:none; background-color:#fff; }
+
+.search-container .tabs ul li a span { display:block; border-left:1px solid #b2b2b2; text-align:center; padding:0 15px; }
+
+
+/**
+ *
+ * Grouped stations
+ *
+ */
+ 
+.station-group.collapsed .station-group-hidden {
+	display:none;	
+}
+
+.station-group a.station-group-toggle {
+	display:block;
+	padding:10px 0;
+	text-align:center;
+	color:#666;
+	text-decoration:none;
+	font-weight:bold;
+	background-color:#f4f3f3;
+	position:relative;
+	border-top:1px solid #ddd;
+}
+.station-group a.station-group-toggle:hover {
+	background-color:#ddd9da;
+	color:#222;
+}
+.station-group a i { position:absolute; right:15px; top:11px; display:block; width:16px; height:9px; background:url(../img/sprite.png) -150px -24px no-repeat; }
+.station-group a:hover i { background-position:-150px -36px; }
+.station-group.collapsed a i { background-position:-150px 0; }
+.station-group.collapsed a:hover i { background-position:-150px -12px; }
+
+.q-sel { font-weight: bolder; }
+
+
+/**
+ *
+ * Error Message
+ *
+ */
+
+.error-message { box-shadow:0 0 4px rgba(0, 0, 0, 0.4); border-radius:5px; width:75%; background-color:#fff; margin:75px auto; padding:20px 30px; text-align:center; }
+.error-message h1 { font-weight:normal; color:#333; padding-top:100px; margin:20px 0 35px 0; line-height:1.1em; }
+.error-message p { font-size:16px; color:#838383; margin:25px 0; }
+.error-message .terms { color:#133075; word-wrap:break-word; }
+.error-message p strong { font-weight:normal; color:#333; }
+
+.error-message.no-results h1 { font-size:32px; background:url(../img/error-icons-sprite.png) 50% -200px no-repeat; }
+.error-message.fail h1 { font-size:22px; background:url(../img/error-icons-sprite.png) 50% -400px no-repeat; }

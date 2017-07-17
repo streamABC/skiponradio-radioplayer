@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<!--
+Version: 1.2.17
+-->
+<meta charset="utf-8">
+<title>radioplayer.de</title>
+
+<!-- Standard Radioplayer Pre-Roll Framework CSS -->
+<link type="text/css" rel="stylesheet" href="https://your-console-domain.com/console-path/preroll-framework/framework.css" />
+
+<!-- Page Configuration -->
+<script type="text/javascript">
+var prerollConfig = {
+	proxyUrl: 'https://your-console-domain.com/console-path/preroll-framework/xdomainproxy.html',
+	showButton: true//,
+	//buttonText: 'Skip' // uncomment if you wish to customise the default button text. By default, it is 'Skip' for interstitials and 'Close' for overlays.
+};
+</script>
+
+<!-- End of Standard Radioplayer Framework - your CSS/JS starts here -->
+<!-- You can manually perform a skip, for example at the end of a video pre-roll, by calling rpPre.skip(); -->
+
+<style type="text/css">
+body { background: #999999; color:#cbcbcb; font-family:Arial, Helvetica, sans-serif; font-size:14px; margin: 0; }
+p { text-align:center; }
+</style>
+
+<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="https://releases.flowplayer.org/5.4.6/flowplayer.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://releases.flowplayer.org/5.4.6/skin/minimalist.css">
+
+</head>
+<body>
+<p style="margin-left: 5px; margin-right: 90px; text-shadow: 0px 1px 1px #000;">
+    <strong>Pre-roll content.</strong>
+</p>
+<div class="flowplayer" data-engine="flash" style="max-height:400px">
+    <video autoplay>
+          
+        <source type="video/webm" src="https://stream.flowplayer.org/bauhaus/624x260.webm">
+        <source type="video/mp4" src="https://stream.flowplayer.org/bauhaus/624x260.mp4">
+
+    </video>
+</div>
+
+<script type="text/javascript">
+flowplayer(function (api, root) {
+	api.bind("finish", function(e, api) {
+		rpPre.skip();
+	});
+});
+</script>
+
+<!-- DO NOT REMOVE: Standard Radioplayer Pre-Roll Framework JS -->
+<script type="text/javascript" src="https://your-console-domain.com/console-path/preroll-framework/framework.js"></script>
+
+</body>
+</html>

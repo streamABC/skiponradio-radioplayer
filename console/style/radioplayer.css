@@ -1,0 +1,1000 @@
+/**
+ * Version: 1.2.17
+ * 
+ * WARNING - The entire console inherits from these values.
+ * It is strongly recommended to not make changes to the following styling.
+ */
+html, body { min-width:320px; height:100%; margin:0; padding:0; }
+body { font-family:Arial, sans-serif; font-size:62.5%; line-height:100%; overflow:visible; background-color:#272727; }
+a { color:#222; }
+p { margin:0; padding:0; font-size:1.1em; line-height:120%; }
+
+.access { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+.console-wrapper { height:100%; box-sizing:border-box; }
+.radioplayer { width:950px; max-height:877px; height:100%; margin:0 auto; position:relative; }
+
+.radioplayer-head { position:relative; overflow:hidden; margin:9px 10px 7px; }
+.radioplayer-head .logo { position:relative; overflow:hidden; margin:10px 0 5px 0; display:block; }
+.radioplayer-head .station-logo { float:left; width:180px; background-position:0 0;	background-repeat:no-repeat; }
+.radioplayer-head .emp-container { /* clear:both; height:43px;*/ }
+.radioplayer-head .stn-logo { position:relative; width:215px; height:50px; text-indent:-9999px; display:block; float:left; }
+.radioplayer-head .play-controls { display:block; position:absolute; right:10px; top:15px; width:104px; height:40px; }
+
+.radioplayer-head .real-emp-container { margin-left:9px; }
+
+.radioplayer-localwrapper { position:absolute; overflow:auto; top:61px; bottom:0; width:100%; }
+
+.radioplayer-body { position:relative; margin:0 10px 8px 10px; left:0; right:0; min-height:486px; }
+
+.radioplayer-plugin { overflow:auto; margin:0 auto; }
+.radioplayer-plugin img { max-width:100%; height:auto; display:block; border:0; }
+
+.radioplayer-prerolloverlay { position:absolute; top:0; right:0; bottom:0; left:0; }
+.radioplayer-prerolloverlay iframe { position:absolute; top:0; left:0; border:0; width:100%; height:100%; }
+
+.radioplayer-emp-container { position:absolute; left:-9999px; width:0; height:0; }
+
+
+/**
+ * 
+ * Global Nav
+ *
+ */
+
+.radioplayer-globalnav-wrapper { position:absolute; overflow:hidden; width:100%; }
+
+.radioplayer-globalnav { position:relative; overflow:hidden; left:0; top:0; background-color:#eeeeee; border-bottom:1px solid #ccc; }
+
+/* Menu Button */
+.radioplayer-globalnav .menu-btn { float:left; width:50px; height:60px; cursor:pointer; border:0; padding:0; margin:0; background:none; }
+.radioplayer-globalnav .menu-btn:active { background-color:#d7d5d5; }
+.radioplayer-globalnav .menu-btn span { display:block; background:url(../img/sprite.png) -250px -50px no-repeat; width:20px; height:20px; text-indent:-9999px; margin:13px; }
+body.rp-mouseactivity .radioplayer-globalnav .menu-btn { outline:none; }
+
+  /* button icon position fix for older ie */
+html.lte8 .radioplayer-globalnav .menu-btn { position:relative; overflow:visible; }
+html.lte8 .radioplayer-globalnav .menu-btn span { margin:0; position:absolute; left:13px; top:13px; }
+
+/* App Buttons */
+.radioplayer-globalnav a #rectangle {
+    width:133px;
+    height:38px;
+    border:1px solid #666666;
+    border-radius:4px;
+    position: absolute;
+    left: 50px;
+    top: 11px;
+}
+
+.radioplayer-globalnav a #rectangle span {
+    position: absolute;
+    top: 14px;
+    left: 35px;
+    color:#666666;
+}
+
+.radioplayer-globalnav a #rectangle #apps-download-img {
+    background: url(../img/apps-download-link.png) no-repeat;
+    padding: 18px;
+    position: absolute;
+    margin: 3px 0 0 8px;
+}
+
+.invisible {
+    display: none;
+}
+
+/* Search Box */
+.radioplayer-globalnav .search-box { float:right; margin:15px 10px 0 0; position:relative; }
+.radioplayer-globalnav .search-box fieldset { padding:0; margin:0; width:200px; height:29px; background-color:#fff; border:1px solid #d6d3d3; }
+.radioplayer-globalnav .search-box input { border:0; width:165px; height:23px; line-height:23px; padding:3px 0 3px 8px; background:none; color:#b0b0b0; font-size:13px; }
+.radioplayer-globalnav .search-box.active input { color:#222; }
+.radioplayer-globalnav .search-box input::-ms-clear { display:none; /* Hide the cross added by IE 10 */ }
+body.rp-mouseactivity .radioplayer-globalnav .search-box input { outline:none; }
+
+.radioplayer-globalnav .search-box button { width:30px; height:29px; padding:0; margin:0; position:absolute; right:1px; top:1px; border:0; cursor:pointer; background-color:transparent; overflow:visible; }
+.radioplayer-globalnav .search-box button span { display:block; text-indent:-9999px; }
+body.rp-mouseactivity .radioplayer-globalnav .search-box button { outline:none; }
+
+.radioplayer-globalnav .search-box #search-button span { background:url(../img/sprite.png) -150px -50px no-repeat; width:13px; height:13px; margin:9px 8px 7px 9px; }
+.radioplayer-globalnav .search-box.active #search-button span { background-position:-170px -50px; }
+
+.radioplayer-globalnav .search-box #search-clear { display:none; }
+.radioplayer-globalnav .search-box #search-clear span { background:url(../img/sprite.png) -150px -100px no-repeat; width:9px; height:9px; margin:10px 10px 10px 11px; }
+
+  /* button icon position fix for older ie */
+html.lte8 .radioplayer-globalnav .search-box button { overflow:visible; }
+html.lte8 .radioplayer-globalnav .search-box #search-button span { margin:0; position:absolute; left:9px; top:9px; }
+html.lte8 .radioplayer-globalnav .search-box #search-clear span { margin:0; position:absolute; left:11px; top:10px; }
+
+.radioplayer-globalnav .rp-logo { float:left; left:50%; position:absolute; margin:10px 10px 10px -72px; width:144px; height:40px; cursor:pointer; text-indent:-9999px; background:url(../img/sprite.png) -200px -101px no-repeat; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
+
+/**
+ * 
+ * General Overlay Containers and Furniture
+ *
+ */
+
+.overlay-container { display:none; position:absolute; top:61px; bottom:81px; width:100%; overflow:hidden; z-index:900; }
+
+.overlay-container .tabs { background-color:#f4f3f3; border-bottom: 1px solid #dddddd; width:100%; height:46px; position:absolute; }
+.overlay-container .tabs ul { margin:0; padding:0; list-style:none; }
+.overlay-container .tabs ul li { float:left; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; height:46px; }
+.overlay-container .tabs ul li a { display:block; color:#333; padding:15px 0; line-height:16px; text-transform:uppercase; text-decoration:none; font-weight:bold; font-size:120%; }
+.overlay-container .tabs ul li a span { display:block; border-left:1px solid #b2b2b2; text-align:center; padding:0 15px; }
+.overlay-container .tabs ul li.on a span { border-left:1px solid #333; }
+.overlay-container .tabs ul li.no-divide a span { border-left:1px solid #f4f3f3; }
+.overlay-container .tabs ul li.first a span { border-left:none; }
+.overlay-container .tabs ul li.two-lines a { padding:7px 0; }
+
+.overlay-container .tab-container { display:none; }
+.overlay-container .tab-container.showing { display:block; height:100%; }
+.overlay-container .tabs-wrapper, 
+.overlay-container .search-wrapper { top:48px; bottom:0; width:100%; position:absolute; }
+.overlay-container .tabs-wrapper .spinner, 
+.overlay-container .search-wrapper .spinner { display:none; width:32px; height:32px; position:absolute; left:50%; margin-left:-16px; bottom:50px; }
+
+.scrollable-wrapper { overflow:auto; height:100%; position:relative; /* <- this is an IE7 fix */ }
+.scrollable-wrapper.has-error { background-color:#f6f6f6; }
+
+/**
+ * 
+ * Responsive Navigation Toggle
+ *
+ */
+[role="navigation"] { z-index:100; }
+#menu-nav-toggle, #search-nav-toggle { display:none; color:#333; padding:0; line-height:16px; text-transform:uppercase; text-decoration:none; font-weight:bold; }
+#menu-nav-toggle li a, #search-nav-toggle li a { padding:13px 0 13px 10px; background-color:#333; color:#fff; }
+#menu-nav-toggle li a .menu_toggle, #search-nav-toggle li a .menu_toggle { display:block; float:right; background:url(../img/sprite.png) -310px -50px no-repeat; height:19px; margin:-3px 3px 0 0;  }
+#menu-nav-toggle li a .menu_toggle.nav-expanded, #search-nav-toggle li a .menu_toggle.nav-expanded { background:url(../img/sprite.png) -350px -50px no-repeat;  }
+
+/**
+ * 
+ * Menu
+ *
+ */
+
+.menu-container { display:none; height:100%; min-height:100%; background-color:#fff; }
+.menu-container ul { width:500px; }
+.search-container ul { width:100%; }
+
+.menu-container .alphabet { width:100%; background-color:#fff; height:10px; padding:17px 0; text-align:center; }
+.menu-container .alphabet ul { display:inline; margin:0; padding:0; list-style:none; }
+.menu-container .alphabet ul li { display:inline; }
+.menu-container .alphabet ul li a { color:#333; text-decoration:none; font-weight:bold; padding:2px 4px 2px 2px; font-size:160%; }
+.menu-container .alphabet ul li a:hover { color:#000; }
+.menu-container .alphabet ul li.no-stations a { color:#575757; }
+.menu-container .alphabet ul li.no-stations a:hover { color:#000; }
+
+.menu-container .azlist-container { height:100%; }
+
+.menu-container .azlist-container .letter-divide { background-color:#ddd; border-bottom:1px solid #aaa; color:#333; padding:5px; font-size:108%; font-weight:bold; }
+
+.menu-container .azlist-container .no-stations-item { text-align:center; font-size:108%; padding:10px; }
+
+.menu-container .sticky-divide-wrapper { position:absolute; top:44px; bottom:0; width:100%; overflow:hidden; }
+.menu-container .sticky-divide { display:none; background-color:#ddd; border-bottom:1px solid #aaa; color:#333; padding:5px; font-size:108%; font-weight:bold; position:absolute; z-index:1; }
+
+
+/**
+ *
+ * My Stations - No stations message
+ *
+ */
+
+.no-overlay-items { box-shadow:0 0 4px rgba(0, 0, 0, 0.4); border-radius:5px; width:75%; background-color:#fff; margin:95px auto; padding:20px 30px; text-align:center; }
+.no-overlay-items h1 { font-weight:normal; font-size:22px; background:url(../img/error-icons-sprite.png) 50% 0 no-repeat; color:#333; padding-top:75px; margin:20px 0 20px 0; line-height:1.1em; }
+.no-overlay-items p { font-size:16px; color:#838383; margin:20px 0; }
+
+.menu-container .tab-container.has-no-items { background-color:#f6f6f6; }
+
+
+/**
+ *
+ * Point Prompt
+ *
+ */
+
+.point-prompt { position:absolute; height:40px; color:#000; padding:4px 10px 0 37px; font-size:116%; line-height:1.3em; background-image:url(../img/sprite.png); background-repeat:no-repeat; }
+.point-prompt.press-play-prompt { left:-95px; top:4px; background-position:0 -200px; width:95px; }
+.point-prompt.volume-prompt { left:-186px; top:4px; background-position:0 -300px; width:145px; font-size:94%; }
+.point-prompt  .prompt-text { }
+
+/**
+ *
+ * Announcement
+ *
+ */
+
+.radioplayer-anno { position:absolute; top:0; left:0; width:100%; height:78px; z-index:1; }
+.radioplayer-anno:before { content:" "; position:absolute; top:0; left:0; width:100%; height:78px; background:url(../img/notification-bg.png) 0 0 repeat; z-index:-1; }
+.radioplayer-anno:after { content:" "; position:absolute; top:0; left:0; width:100%; height:78px; background:url(../img/notification-bg-tab.png) right top no-repeat; z-index:-1; }
+.radioplayer-anno .anno-text { padding:6px 10px; width:75%; height:45px; color:#fff; font-size:108%; line-height:1.2em; }
+.radioplayer-anno .anno-text a { color:#fff; }
+.radioplayer-anno .hide-anno { display:block; position:absolute; right:8px; bottom:0; background:url(../img/sprite.png) -142px -199px no-repeat; width:26px; height:16px; text-indent:-9999px; }
+
+
+/**
+ *
+ * Cookie Consent
+ *
+ */
+ 
+.radioplayer-cookie-consent { position:absolute; top:0; left:0; width:100%; z-index:1; }
+.radioplayer-cookie-consent:before { content:" "; position:absolute; top:0; left:0; width:100%; height:78px; background:url(../img/notification-bg.png) 0 0 repeat; z-index:-1; }
+.radioplayer-cookie-consent .cookie-consent-button { float:right; margin:5px; padding:8px 15px; display:block; position:absolute; right:0; background-color:#ffff00; line-height:1em; font-size:108%; color:#383838; font-weight:bold; text-decoration:none; border-radius:5px; -webkit-border-radius:5px; }
+.radioplayer-cookie-consent .cookie-consent-button:hover,
+.radioplayer-cookie-consent .cookie-consent-button:active { background-color:#ffff99; }
+.radioplayer-cookie-consent .cookie-consent-text { padding:6px 10px; width:82%; color:#fff; font-size:108%; line-height:1.2em; }
+.radioplayer-cookie-consent .cookie-consent-text a { color:#fff; }
+.radioplayer-cookie-consent .hide-cookie-consent { display:block; position:absolute; right:8px; bottom:0; background:url(../img/sprite.png) -142px -199px no-repeat; width:26px; height:16px; text-indent:-9999px; }
+ 
+ 
+/**
+ *
+ * Stream Error
+ *
+ */
+
+.radioplayer-erroroverlay { top:0; right:0; bottom:0; left:0; background-color:#fff; border:1px solid #838383; text-align:center; margin:0 10px 8px 10px; }
+.radioplayer-erroroverlay h1 { font-weight:normal; color:#333; padding-top:100px; margin:20px 0 25px 0; line-height:1.1em; font-size:22px; background:url(../img/error-icons-sprite.png) 50% -400px no-repeat; }
+.radioplayer-erroroverlay p { font-size:16px; color:#838383; margin:25px 5px; }
+
+
+/**
+ *
+ * Adjustments for when overlay is showing
+ *
+ */
+
+body.showing-overlay .radioplayer-head { margin:0; padding:8px 10px 8px; z-index:901; border-top:1px outset #222; }
+body.showing-overlay .radioplayer-head .stn-logo { }
+body.showing-overlay .radioplayer-head .now-playing-strip { display:none; }
+body.showing-overlay .radioplayer-globalnav .menu-btn span { background-position:-279px -50px; }
+body.showing-overlay .radioplayer-globalnav .menu-btn:active { background-color:#d7d5d5; }
+body.showing-overlay .radioplayer-body { position:absolute; top:-9999px; }
+body.showing-overlay .radioplayer-localwrapper { top:auto; bottom:0; height:67px }
+body.showing-overlay .overlay-container { display:block; bottom:67px; }
+body.showing-overlay #controls { }
+body.showing-search .search-container { display:block; height:100%; }
+body.showing-suggest .suggest-container { display:block; }
+body.showing-menu .menu-container { display:block; }
+
+
+/**
+ *
+ * Hidden iframes
+ *
+ */
+
+iframe.crossdomain-iframe  { height:1px; width:1px; position:absolute; top:0; left:-2000px;	visibility:hidden; }
+/**
+ * Version: 1.2.17
+ * 
+ *
+ * Media Queries
+ *
+ */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	.radioplayer-globalnav .search-box input,
+	.radioplayer-globalnav .search-box input:focus,
+	.radioplayer-globalnav .search-box input:hover {
+		font-size: 16px !important;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	.console-wrapper,
+	.radioplayer,
+	.radioplayer-globalnav {
+		width: 100%;
+	}
+}
+
+@media screen and (max-height: 664px) {
+	.no-overlay-items,
+	.error-message {
+		margin: 25px auto;
+	}
+}
+
+@media screen and (max-height: 568px) {
+	.no-overlay-items h1,
+	.no-overlay-items p {
+		margin: 5px 0;
+	}
+}
+
+@media screen and (max-width: 580px) {
+	.radioplayer-globalnav .search-box input:focus {
+		width: 155px;
+	}
+	.radioplayer-anno .rp-logo {
+		display: none
+	}
+	.radioplayer-anno .anno-text {
+		width: 90%
+	}
+	.radioplayer-globalnav a #rectangle {
+		width:68px;
+		height:29px;
+		border:1px solid #666666;
+		border-radius:4px;
+		position: absolute;
+		left: 40px;
+		top: 15px;
+	}
+
+	.radioplayer-globalnav a #rectangle span {
+		position: absolute;
+		top: 6px;
+		left: 22px;
+		color:#666666;
+		font-size:10px;
+	}
+
+	.radioplayer-globalnav a #rectangle #apps-download-img {
+		background: url(../img/apps-download-link-mobile.png) no-repeat;
+		padding: 18px;
+		position: absolute;
+		margin: 3px 0 0 3px;
+	}
+
+	.radioplayer-globalnav .search-box {
+		margin-left: -110px;
+	}
+	.radioplayer-globalnav .search-box fieldset {
+		width: 120px;
+	}
+	.radioplayer-globalnav .search-box input {
+		width: 70px;
+		padding-left: 3px;
+		font-size:11px !important;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	html.desktop, body.desktop,
+	html.desktop .console-wrapper, body.desktop .console-wrapper,
+	html.desktop .radioplayer, body.desktop .radioplayer,
+	html.desktop .radioplayer-globalnav, body.desktop .radioplayer-globalnav {
+		min-width: 480px;
+	}
+}
+
+@media screen and (max-device-width: 480px) {
+	.menu-container .tabs,
+	.menu-container .alphabet {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling: touch;
+	}
+	.menu-container .alphabet ul {
+		margin: 0 8px;
+	}
+	.menu-container .alphabet ul li a {
+		padding: 2px 8px 2px 2px;
+	}
+}
+
+@media screen and (max-device-width: 459px) {
+	.radioplayer-cookie-consent .cookie-consent-text {
+		font-size: 95%;
+		line-height: 1em;
+	}
+}
+
+@media screen and (max-device-width: 448px) {
+	.radioplayer-globalnav .rp-logo {
+		left: 32%;
+		margin: 10px 10px 10px 0;
+		background: url(../img/sprite.png) -360px -101px no-repeat;
+	}
+	.radioplayer-globalnav .menu-btn {
+		width: 40px;
+		height: 60px;
+	}
+	.radioplayer-globalnav .menu-btn span {
+		background-position: -320px -50px;
+		width: 16px;
+		height: 16px;
+	}
+	body.showing-overlay .radioplayer-globalnav .menu-btn span {
+		background-position: -339px -50px;
+	}
+
+	.radioplayer-globalnav .search-box {
+		margin-left: -110px;
+	}
+	.radioplayer-globalnav .search-box fieldset {
+		width: 120px;
+	}
+	.radioplayer-globalnav .search-box input {
+		width: 70px;
+		padding-left: 3px;
+		font-size:11px !important;
+	}
+
+	.radioplayer-globalnav .search-box.focus fieldset {
+		width: 190px;
+	}
+	.radioplayer-globalnav .search-box input:focus {
+		width: 155px;
+	}
+
+	.overlay-item-img {
+		width: 66px;
+		height: 38px;
+		margin-bottom: 5px;
+	}
+	.overlay-item-img img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+	.overlay-item .overlay-item-link:hover .overlay-item-img .play-icon,
+	.overlay-item .overlay-item-link:focus .overlay-item-img .play-icon {
+		background: url(../img/sprite.png) -400px 0 no-repeat;
+		display: block;
+		width: 65px;
+		height: 36px;
+		position: absolute;
+		left: 1px;
+	}
+	.overlay-item .title {
+		font-size: 120%;
+		margin-left: 83px;
+		width: 65%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	.overlay-item .subtitle,
+	.overlay-item .programme-title,
+	.overlay-item .description {
+		font-size: 100%;
+	}
+
+	.overlay-item-data {
+		margin-left: 103px;
+		width: 65% !important;
+		float: none !important;
+	}
+	.overlay-item-extra .overlay-item-data {
+		margin-left: 0;
+		width: 100%;
+	}
+	.overlay-item-extra {
+		padding-left: 83px;
+	}
+}
+
+@media screen and (max-device-width: 420px) {
+	.radioplayer-globalnav .rp-logo.reduced {
+		margin: 10px 10px 10px 0;
+		width:35px;
+	}
+}
+
+@media only screen and (max-device-width: 320px) {
+	html, body,
+	.radioplayer,
+	.radioplayer-globalnav {
+		min-width: 320px;
+	}
+}
+
+@media only screen and (max-device-width: 448px) and (-webkit-min-device-pixel-ratio: 2)  {
+	.optimise {
+		image-rendering: optimizeSpeed;
+		image-rendering: -moz-crisp-edges;
+		image-rendering: -o-crisp-edges;
+		image-rendering: -webkit-optimize-contrast;
+		image-rendering: optimize-contrast;
+		-ms-interpolation-mode: nearest-neighbor;
+	}
+
+	.overlay-item .overlay-item-link:hover .overlay-item-img .play-icon,
+	.overlay-item .overlay-item-link:focus .overlay-item-img .play-icon {
+		background-image: url(../img/sprite_2x.png) !important;
+		background-size: 480px 350px;
+	}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2)  {
+	.radioplayer-globalnav .menu-btn span,
+	.radioplayer-globalnav .search-box #search-button span,
+	.radioplayer-globalnav .search-box #search-clear span,
+	.radioplayer-globalnav .rp-logo,
+	#menu-nav-toggle li a .menu_toggle, #search-nav-toggle li a .menu_toggle,
+	#menu-nav-toggle li a .menu_toggle.nav-expanded, #search-nav-toggle li a .menu_toggle.nav-expanded,
+	.point-prompt,
+	.radioplayer-anno .hide-anno,
+	.radioplayer-cookie-consent .hide-cookie-consent,
+	.overlay-item .overlay-item-link:hover .overlay-item-img .play-icon,
+	.overlay-item .overlay-item-link:focus .overlay-item-img .play-icon,
+	.overlay-item .more-toggle span,
+	.overlay-item .toggle-mystations button span,
+	.overlay-item-extra-cont .overlay-item-song i,
+	.overlay-item-extra-cont .recommend-factors i,
+	#play-controls button span,
+	#toggle-mystations span,
+	#volume-control,
+	.station-group a i {
+		background-image: url(../img/sprite_2x.png) !important;
+		background-size: 480px 350px;
+	}
+
+	.overlay-item .toggle-mystations button.animating span,
+	.overlay-item .toggle-mystations button.animating:hover span,
+	#toggle-mystations.animating span,
+	#toggle-mystations.animating:hover span {
+		background-image: url(../img/heart-sprite_2x.png) !important;
+		background-size: 64px 475px;
+	}
+
+	.no-overlay-items h1,
+	.radioplayer-erroroverlay h1,
+	.error-message.no-results h1,
+	.error-message.fail h1 {
+		background-image: url(../img/error-icons-sprite_3x.png) !important;
+		background-size: 70px 466px;
+	}
+}
+
+@media only screen and (max-device-width: 448px) and (-webkit-min-device-pixel-ratio: 3)  {
+	.overlay-item .overlay-item-link:hover .overlay-item-img .play-icon,
+	.overlay-item .overlay-item-link:focus .overlay-item-img .play-icon {
+		background-image: url(../img/sprite_3x.png) !important;
+		background-size:480px 350px;
+	}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3)  {
+	.radioplayer-globalnav .menu-btn span,
+	.radioplayer-globalnav .search-box #search-button span,
+	.radioplayer-globalnav .search-box #search-clear span,
+	.radioplayer-globalnav .rp-logo,
+	#menu-nav-toggle li a .menu_toggle, #search-nav-toggle li a .menu_toggle,
+	#menu-nav-toggle li a .menu_toggle.nav-expanded, #search-nav-toggle li a .menu_toggle.nav-expanded,
+	.point-prompt,
+	.radioplayer-anno .hide-anno,
+	.radioplayer-cookie-consent .hide-cookie-consent,
+	.overlay-item .overlay-item-link:hover .overlay-item-img .play-icon,
+	.overlay-item .overlay-item-link:focus .overlay-item-img .play-icon,
+	.overlay-item .more-toggle span,
+	.overlay-item .toggle-mystations button span,
+	.overlay-item-extra-cont .overlay-item-song i,
+	.overlay-item-extra-cont .recommend-factors i,
+	#play-controls button span,
+	#toggle-mystations span,
+	#volume-control,
+	.station-group a i {
+		background-image: url(../img/sprite_3x.png) !important;
+		background-size: 480px 350px;
+	}
+
+	.overlay-item .toggle-mystations button.animating span,
+	.overlay-item .toggle-mystations button.animating:hover span,
+	#toggle-mystations.animating span,
+	#toggle-mystations.animating:hover span {
+		background-image: url(../img/heart-sprite_3x.png) !important;
+		background-size: 64px 475px;
+	}
+
+	.no-overlay-items h1,
+	.radioplayer-erroroverlay h1,
+	.error-message.no-results h1,
+	.error-message.fail h1 {
+		background-image: url(../img/error-icons-sprite_3x.png) !important;
+		background-size: 70px 466px;
+	}
+}/**
+ * Version: 1.2.17
+ * 
+ *
+ * Document   : overlay-items.css
+ * Description: layout and styles for individual results in overlays
+ *
+ */
+.overlay-item { position:relative; min-height:60px; overflow:hidden; border-bottom:1px solid #dddddd; }
+.overlay-item-img { width:88px; height:50px; float:left; margin-right:15px; }
+.overlay-item-data { float:left; width:75%; }
+
+.overlay-item .title { font-size:14px; color:#333; padding-bottom:1px; line-height:110%; display:block; margin-left:103px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+
+.overlay-item .subtitle, 
+.overlay-item .programme-title { font-size:12px; color:#333; padding-bottom:2px; }
+
+.overlay-item .subtitle.truncate, 
+.overlay-item .programme-title.truncate { overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+
+.overlay-item .description { font-size:12px; color:#8D8D8D; }
+.overlay-item .q-sel { color:#000; }
+.overlay-item .overlay-item-link { text-decoration:none; color:#333; cursor:pointer; }
+.overlay-item .overlay-item-link:hover,
+.overlay-item .overlay-item-link:focus { text-decoration:underline; }
+.overlay-item .overlay-item-link:focus .title { outline:1px dotted #000; }
+.overlay-item .overlay-item-link .overlay-item-img { position:relative; }
+.overlay-item .overlay-item-link .overlay-item-img img { border:1px solid #e3e3e3; }
+.overlay-item .overlay-item-link:hover .overlay-item-img .play-icon,
+.overlay-item .overlay-item-link:focus .overlay-item-img .play-icon { background:url(../img/sprite.png) -280px 0 no-repeat; display:block; width:86px; height:48px; position:absolute; left:1px; top:1px; }
+.overlay-item .overlay-item-link:hover .overlay-item-img img,
+.overlay-item .overlay-item-link:focus .overlay-item-img img { border-color:#bbb; }
+
+
+/* More Toggle - arrow to expand each result */
+.overlay-item .more-toggle { display:block; width:16px; height:9px; padding:7px 5px; position:absolute; bottom:3px; right:10px; cursor:pointer; }
+.overlay-item .more-toggle span { background:url(../img/sprite.png) -150px 0 no-repeat; display:block; width:16px; height:9px; text-indent:-9999px; }
+.overlay-item .more-toggle:hover span { background-position:-150px -12px; }
+.overlay-item.expanded .more-toggle span { background-position:-150px -24px; display:block; }
+.overlay-item.expanded .more-toggle:hover span { background-position:-150px -36px; display:block; }
+
+
+/* My Station Toggle - Heart icon */
+.overlay-item .toggle-mystations { width:32px; height:25px; position:absolute; right:7px; top:7px; }
+.overlay-item .toggle-mystations button { display:block; width:32px; height:25px; cursor:pointer; border:0; padding:0; background:transparent; }
+
+/*noinspection CssOptimizeSimilarProperties*/
+.overlay-item .toggle-mystations button span {
+	text-indent:-9999px; 
+	display:block; 
+	width:32px; 
+	height:25px;
+	background-image: url(../img/sprite.png);
+	background-position: 0 -275px;
+	background-repeat: no-repeat;
+}
+
+.overlay-item .toggle-mystations button:hover span { background-position:-50px -275px; }
+.overlay-item.in-mystations .toggle-mystations button span { background-position:-100px -275px; }
+.overlay-item.animating-mystations button { display:none; }
+
+.overlay-item .toggle-mystations button.animating span,
+.overlay-item .toggle-mystations button.animating:hover span { background-image:url(../img/heart-sprite.png); }
+
+body.rp-mouseactivity .overlay-item .toggle-mystations button { outline:none; }
+
+
+/* button icon position fix for older ie */
+html.lte8 .overlay-item .toggle-mystations button { position:relative; overflow:visible; }
+html.lte8 .overlay-item .toggle-mystations button span { position:absolute; left:0; top:0; }
+
+
+/* Expanded results */
+.overlay-item.expanded { background-color:#fff; }
+.overlay-item.prevExpanded { }
+.overlay-item.hover.expanded { background-color:#fff; }
+
+.overlay-item-initial { overflow:hidden; position:relative; padding:10px; }
+
+.overlay-item-extra-cont { display:none; background-color:#f4f3f3; }
+.overlay-item-extra-cont .padding-wrap { padding:10px; }
+
+.overlay-item-extra { clear:both; margin-top:12px; border-top:1px solid #c6c4c5; padding-top:12px; padding-left:103px; overflow:hidden; position:relative; }
+.overlay-item-extra.hasImage { padding-left:0; }
+.overlay-item-extra.no-top-border { margin-top:0; border-top:0; padding-top:0; }
+
+
+/* Live vs Catch Up tags, plus the time since broadcast */
+.overlay-item .broadcast-info { padding-top:8px; }
+.overlay-item .broadcast-info .status { background-color:#393939; color:#fff; padding:2px; box-sizing:border-box; font-size:0.9em; font-weight:bold; text-transform:uppercase;  }
+.overlay-item .broadcast-info .broadcast-time { font-style:italic; }
+
+
+/* Song */
+.overlay-item-extra-cont .overlay-item-song { padding:12px 0 5px 30px; margin-top:12px; border-top:1px solid #c6c4c5; text-transform:uppercase; color:#666; position:relative; height:9px; }
+.overlay-item-extra-cont .overlay-item-song i { display:block; background:url(../img/sprite.png) -200px -50px no-repeat; width:19px; height:19px; position:absolute; left:0; top:7px; }
+.overlay-item-extra-cont .overlay-item-song.no-top-border { margin-top:0; border-top:0; padding-top:0; }
+
+
+/* Recommended factors */
+.overlay-item-extra-cont .recommend-factors { padding:5px 0 5px 30px; text-transform:uppercase; color:#666; position:relative; height:9px; }
+.overlay-item-extra-cont .recommend-factors i { display:block; background:url(../img/sprite.png) -220px -50px no-repeat; width:19px; height:19px; position:absolute; left:0; top:0; }
+#controls { position:relative; float:right; width:133px; height:50px; }
+#controls.no-volume { width:80px; }
+
+/**
+ * Version: 1.2.17
+ * 
+ *
+ * Play / Stop / Pause
+ *
+ */
+
+#play-controls { position:absolute; left:30px; top:0; }
+#play-controls button { cursor:pointer; width:50px; height:50px; border:0; background-color:transparent; padding:0; }
+#play-controls button span { display:block; width:50px; height:50px; background-image:url(../img/sprite.png); background-repeat:no-repeat; text-indent:-9999px; }
+body.rp-mouseactivity #play-controls button { outline:none; }
+
+/* button icon position fix for older ie */
+html.lte8 #play-controls button { position:relative; overflow:visible; }
+html.lte8 #play-controls button span { position:absolute; left:0; top:0; }
+
+#play span { background-position:0 0; }
+#play:hover span,
+#play:active span { background-position:0 -50px; }
+
+#pause { display:none; }
+#pause span { background-position:-100px 0px; }
+#pause:hover span,
+#pause:active span { background-position:-100px -50px; }
+
+#stop { display:none; }
+#stop span { background-position:-50px 0px; }
+#stop:hover span,
+#stop:active span { background-position:-50px -50px; }
+
+.radioplayer.dark-theme #play span { background-position:0 -100px; }
+.radioplayer.dark-theme #play:hover span,
+.radioplayer.dark-theme #play:active span { background-position:0 -150px; }
+
+.radioplayer.dark-theme #pause span { background-position:-100px -100px; }
+.radioplayer.dark-theme #pause:hover span,
+.radioplayer.dark-theme #pause:active span { background-position:-100px -150px; }
+
+.radioplayer.dark-theme #stop span { background-position:-50px -100px; }
+.radioplayer.dark-theme #stop:hover span,
+.radioplayer.dark-theme #stop:active span { background-position:-50px -150px; }
+
+
+/**
+ *
+ * Toggle my station status
+ *
+ */
+
+#mystations-toggle { position:absolute; left:0; top:13px; }
+#mystations-toggle.hidden { display:none; }
+
+#toggle-mystations { display:block; width:32px; height:25px; cursor:pointer; border:0; background-color:transparent; padding:0; }
+body.rp-mouseactivity #toggle-mystations { outline:none; }
+#toggle-mystations span { display:block; width:32px; height:25px; background-image:url(../img/sprite.png); background-repeat:no-repeat; background-position:0 -250px; text-indent:-9999px; }
+#toggle-mystations:hover span { background-position:-50px -250px; }
+#toggle-mystations.in-mystations span { background-position:-100px -250px; }
+#toggle-mystations.in-mystations:hover span { background-position:-100px -250px; }
+
+.radioplayer.dark-theme #toggle-mystations span { background-position:0 -275px; }
+.radioplayer.dark-theme #toggle-mystations:hover span { background-position:-50px -275px; }
+.radioplayer.dark-theme #toggle-mystations.in-mystations span { background-position:-100px -275px; }
+.radioplayer.dark-theme #toggle-mystations.in-mystations:hover span { background-position:-100px -275px; }
+
+#toggle-mystations.animating span,
+#toggle-mystations.animating:hover span { background-image:url(../img/heart-sprite.png); }
+
+/* button icon position fix for older ie */
+html.lte8 #toggle-mystations { position:relative; overflow:visible; }
+html.lte8 #toggle-mystations span { position:absolute; left:0; top:0; }
+
+
+/**
+ *
+ * Volume
+ *
+ */
+
+#volume-controls { position:absolute; left:78px; top:1px; }
+
+#volume-control { width:40px; height:50px; cursor:pointer; background-image:url(../img/sprite.png); background-repeat:no-repeat; background-position:-5000px 0; }
+
+#volume-control.hidden{ display:none }
+#volume-control.muted { background-position:-200px -150px; }
+#volume-control.p20 { background-position:-240px -150px; }
+#volume-control.p40 { background-position:-280px -150px; }
+#volume-control.p60 { background-position:-320px -150px; }
+#volume-control.p80 { background-position:-360px -150px; }
+#volume-control.p100 { background-position:-400px -150px; }
+
+#volume-control.muted.hover { background-position:-200px -150px; }
+#volume-control.p20.hover { background-position:-240px -200px; }
+#volume-control.p40.hover { background-position:-280px -200px; }
+#volume-control.p60.hover { background-position:-320px -200px; }
+#volume-control.p80.hover { background-position:-360px -200px; }
+#volume-control.p100.hover { background-position:-400px -200px; }
+
+.radioplayer.dark-theme #volume-control.muted { background-position:-200px -250px; }
+.radioplayer.dark-theme #volume-control.p20 { background-position:-240px -250px; }
+.radioplayer.dark-theme #volume-control.p40 { background-position:-280px -250px; }
+.radioplayer.dark-theme #volume-control.p60 { background-position:-320px -250px; }
+.radioplayer.dark-theme #volume-control.p80 { background-position:-360px -250px; }
+.radioplayer.dark-theme #volume-control.p100 { background-position:-400px -250px; }
+
+.radioplayer.dark-theme #volume-control.muted.hover { background-position:-200px -250px; }
+.radioplayer.dark-theme #volume-control.p20.hover { background-position:-240px -300px; }
+.radioplayer.dark-theme #volume-control.p40.hover { background-position:-280px -300px; }
+.radioplayer.dark-theme #volume-control.p60.hover { background-position:-320px -300px; }
+.radioplayer.dark-theme #volume-control.p80.hover { background-position:-360px -300px; }
+.radioplayer.dark-theme #volume-control.p100.hover { background-position:-400px -300px; }
+
+#volume-control.disabled { background-position:-440px -150px; }
+.radioplayer.dark-theme #volume-control.disabled { background-position:-440px -250px; }
+
+#volume-controls button.access:focus { left:auto; right:0; width:auto; height:auto; top:0; z-index:1; }
+
+/**
+ *
+ * Now Playing Strip
+ *
+ */
+.now-playing-strip { position:relative; background:url(../img/playing-strip-bg-light.png) 0 0 repeat; padding:2px; width:100%; height:14px; float:left; margin-top:8px; color:#fff; font-size:11px; }
+.radioplayer.dark-theme .now-playing-strip { background:url(../img/playing-strip-bg-dark.png) 0 0 repeat; }
+.now-playing-strip .live-indicator { color:#fff; background-color:#000; font-weight:bold; position:absolute; top:2px; padding:2px; text-transform:uppercase; cursor:default; height:10px; line-height:10px; left:2px; }
+.now-playing-strip .scrolling-container { overflow:hidden; padding-top:1px; height:13px; position:relative; line-height:1.1em; width:78.2%; }
+
+.now-playing-strip .scrolling-text { white-space:nowrap; cursor:default; text-overflow:ellipsis; overflow:hidden; padding-left:4px; }
+.now-playing-strip.mouse-over { text-overflow:clip; }
+.now-playing-strip.mouse-over .scrolling-text { position:absolute; left:4px; top:1px; padding-left:0; text-overflow:clip; }
+.now-playing-strip .song-action { color:#000; background-color:#fff; text-decoration:none; font-weight:bold; padding:2px 4px; text-transform:uppercase; position:absolute; right:6px; top:2px; height:10px; }
+.now-playing-strip .song-action:hover { outline:1px solid #000; }
+
+#live-strip.loading .live-info { visibility:hidden; }
+#live-strip.loading .loading-indicator { font-weight:bold; float:left; padding:2px; cursor:default; height:10px; line-height:10px; display:block; }
+#live-strip .loading-indicator { display:none; }
+
+/**
+ *
+ * Scrub / progress bar
+ *
+ */
+
+/*#live-strip { display:none; }*/
+#od-strip { display:none; }
+
+#od-strip button.access:focus { left:auto; right:0; width:auto; height:auto; top:0; z-index:1; }
+
+#progress-scrubber-background {
+	position:relative;
+	top:0;
+	left:90px;
+	width:1170px;
+	height:18px;
+	-webkit-touch-callout: none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-o-user-select:none;
+	user-select:none; 
+}
+
+#progress-scrubber-playback-bar {
+	position:absolute;
+	clip:rect(0px 1230px 18px 0px);
+	float:none;
+	width:0;
+	height:18px;
+	left:0;
+	top:0;
+	background-color:#000;
+	opacity:0.3;
+	filter:alpha(opacity=30); /* For IE8 and earlier */
+} 
+
+#progress-scrubber-load-bar {
+	position:absolute;
+	clip:rect(0px 1230px 18px 0px);
+	float:none;
+	width:0;
+	height:18px;
+	left:0;
+	top:0;
+	background-color:#000;
+	opacity:0.2;
+	filter:alpha(opacity=20); /* For IE8 and earlier */
+	cursor:pointer;
+}
+
+#progress-scrubber-handle {	cursor:pointer; top:0;	left:0;	position:absolute; width:6px; height:16px; background-color:#fff; border:1px solid #bbb; display:none; }
+#progress-scrubber-handle:active { background-position:-300px -20px; }
+
+#duration {	top:4px; left:4px; position:absolute; width:85px; color:#fff; font-family:"Arial"; font-size:100%; font-weight:bold; display:block; }
+
+#od-title { width:100%; position:absolute; right:4px; top:1px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; line-height:1.1em; text-align:right; }
+
+/**
+ * Version: 1.2.17
+ * 
+ *
+ * Suggested Results
+ * Document   : search.css
+ * Description: specific styling for the search results
+ *
+ */
+
+.suggest-container { display:none; height:100%; background-color:rgba(0, 0, 0, 0.5); }
+.suggest-container .scrollable-wrapper { overflow:auto; height:100%; }
+
+.suggest-item { border-bottom:1px solid #c6c6c6; background-color:#fff; }
+.suggest-item a { display:block; padding:8px 10px 8px 64px; position:relative; min-height:30px; text-decoration:none; outline:none; }
+.suggest-item a:hover { background-color:#f4f4f4; }
+.suggest-item.on a { background-color:#f4f4f4; }
+.suggest-item .image { position:absolute; left:10px; top:10px; width:43px; height:24px; border:1px solid #e3e3e3; }
+.suggest-item .name { display:block; font-size:14px; color:#333; line-height:1.2em; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; padding-top:6px; }
+.suggest-item .prog-name { display:block; font-size:12px; color:#646464; padding-top:1px; line-height:1.2em; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.suggest-item.has-prog-name .name { padding-top:0; }
+
+.suggest-divider { background-color:#ddd; color:#333; padding:5px; font-size:108%; font-weight:bold; text-transform:uppercase; }
+
+.suggest-item.show-all {  }
+.suggest-item.show-all a { display:block; padding:10px 5px; font-size:116%; text-align:center; text-decoration:none; min-height:0; }
+.suggest-item.show-all a:hover { background-color:#eee; }
+
+
+/**
+ *
+ * Main Results
+ *
+ */
+
+.search-container { display:none; background-color:#fff; }
+
+.search-container .tabs ul li a span { display:block; border-left:1px solid #b2b2b2; text-align:center; padding:0 15px; }
+
+
+/**
+ *
+ * Grouped stations
+ *
+ */
+ 
+.station-group.collapsed .station-group-hidden {
+	display:none;	
+}
+
+.station-group a.station-group-toggle {
+	display:block;
+	padding:10px 0;
+	text-align:center;
+	color:#666;
+	text-decoration:none;
+	font-weight:bold;
+	background-color:#f4f3f3;
+	position:relative;
+	border-top:1px solid #ddd;
+}
+.station-group a.station-group-toggle:hover {
+	background-color:#ddd9da;
+	color:#222;
+}
+.station-group a i { position:absolute; right:15px; top:11px; display:block; width:16px; height:9px; background:url(../img/sprite.png) -150px -24px no-repeat; }
+.station-group a:hover i { background-position:-150px -36px; }
+.station-group.collapsed a i { background-position:-150px 0; }
+.station-group.collapsed a:hover i { background-position:-150px -12px; }
+
+.q-sel { font-weight: bolder; }
+
+
+/**
+ *
+ * Error Message
+ *
+ */
+
+.error-message { box-shadow:0 0 4px rgba(0, 0, 0, 0.4); border-radius:5px; width:75%; background-color:#fff; margin:75px auto; padding:20px 30px; text-align:center; }
+.error-message h1 { font-weight:normal; color:#333; padding-top:100px; margin:20px 0 35px 0; line-height:1.1em; }
+.error-message p { font-size:16px; color:#838383; margin:25px 0; }
+.error-message .terms { color:#133075; word-wrap:break-word; }
+.error-message p strong { font-weight:normal; color:#333; }
+
+.error-message.no-results h1 { font-size:32px; background:url(../img/error-icons-sprite.png) 50% -200px no-repeat; }
+.error-message.fail h1 { font-size:22px; background:url(../img/error-icons-sprite.png) 50% -400px no-repeat; }
+/**
+ * Version: 1.2.17
+ * 
+ */
+#station-logo-link {
+	/**
+	 * Station Logo
+	 * Image must be 50px in height, and between 50px and 220px in width
+	 */
+	background: url(../img/logo-example.png) 0 0 no-repeat;
+}
+
+.radioplayer-localwrapper,
+body.showing-overlay .radioplayer-head { 
+	/**
+	 * Background Image or Colour
+	 * Images should be at least 320px width by 640px height
+	 */
+	background: #fff;
+}

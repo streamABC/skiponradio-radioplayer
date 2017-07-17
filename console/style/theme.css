@@ -1,0 +1,38 @@
+/*
+ * Version: 1.2.17
+ */
+#station-logo-link {
+	/**
+	 * Station Logo
+	 * Image must be 50px in height, and between 50px and 220px in width
+	 */
+	background: url(../img/station-logo.png) 0 0 no-repeat;	
+}
+
+.radioplayer-localwrapper,
+body.showing-overlay .radioplayer-head { 
+	/**
+	 * Background Image or Colour
+	 * Images should be 750px width by 815px height
+	 */
+	background: #3a3939;
+}
+
+.playinfo {
+	color: #ffffff;
+	margin-top: 20px;
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+
+.playinfo span {
+	font-weight: strong;
+}
+
+.radioplayer-plugin {
+	overflow: hidden;
+}
+
+button.disabled {
+	color: grey;
+}

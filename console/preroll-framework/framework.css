@@ -1,0 +1,24 @@
+/*
+ * Version: 1.2.17
+ */
+.skip-btn {
+	font-size:16px;
+	position:absolute;
+	top:4px;
+	cursor:pointer;
+	right:4px;
+	z-index:9999;
+	background-color:#000;
+	border:0;
+	display:inline-block;
+	color:#fff;
+	padding:3px 30px 3px 6px;
+	text-decoration:none;
+	background-position:100% 6px;
+	background-repeat:no-repeat;
+}
+.skip-btn:hover {
+	background-color:#222;
+}
+.skip-btn.skip { background-image:url(skip.png); }
+.skip-btn.close { background-image:url(close.png); }

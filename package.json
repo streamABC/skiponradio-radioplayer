@@ -1,0 +1,29 @@
+{
+  "name": "skiponradio-radioplayer",
+  "version": "1.0.0",
+  "description": "Reference implementation of the streamABC player SDK for SkipOnRadio for Radioplayer console.",
+  "main": "./console/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/http-server ./console"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/streamABC/skiponradio-radioplayer.git"
+  },
+  "keywords": [
+    "player",
+    "radioplayer",
+    "reference",
+    "sdk"
+  ],
+  "author": "Peter Teich <teich@streamabc.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/streamABC/skiponradio-radioplayer/issues"
+  },
+  "homepage": "https://github.com/streamABC/skiponradio-radioplayer#readme",
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
+}
