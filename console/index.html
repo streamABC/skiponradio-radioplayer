@@ -400,10 +400,11 @@ dark-theme may be swapped for light-theme
 
     // create a new instance of sABC.Radio and activate the usage of Radioplayer
     // first argument is a config object for sABC.Radio, the second (optional) argument for sABC.PLayerservices
-    var radio = new sABC.Radio({
+    var radio = sABC.newRadio({
         debug: false,
-        radioplayer: true
-    }, {});
+        radioplayer: true,
+				apikey: "abc"
+    });
 
     // set-up the channel data and activate skipping if its enabled in streamABC infrastructure
     radio.setChannel({
