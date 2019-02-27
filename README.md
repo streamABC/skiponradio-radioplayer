@@ -14,3 +14,5 @@ You can use this as an inspiration on how to use our SDK for your own implementa
 
 This is a reference player for Skip On Radio based on a default Radioplayer console.
 All code that is neccessary to make Skip On Radio work is inlined in `index.html` in `console` folder.
+
+![Final player in Browser](player.png)
