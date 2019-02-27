@@ -47,7 +47,7 @@
          */
 
         var currentStationID = "0";
-        var currentStationName = "streamABC Live";
+        var currentStationName = "QuantumCast FM";
 
         // -- nowPlayingSource can be changed from 'default' to one of: 'default-no-stream', 'stream', 'SI', 'PI'
         var nowPlayingSource = 'default';
@@ -89,7 +89,7 @@
         var audioFlash = [{
             appendVersion: false,
             audioType: 'http',
-            audioUrl: 'http://sabc-test.stream.vip/1/mp3-256/',
+            audioUrl: 'http://quantumcast.stream.vip/dyn-sm/mp3-192/',
             audioServer: '',
             audioEndpoint: ''
         }];
@@ -97,7 +97,7 @@
         // -- Add your HTML5 supported stream details here
         var audioHTML = [{
             audioType: 'http',
-            audioUrl: 'http://sabc-test.stream.vip/1/mp3-256/'
+            audioUrl: 'http://quantumcast.stream.vip/dyn-sm/mp3-192/'
         }];
 
         // -- bufferTime may need to be adjusted in rare circumstances to facilitate faster loading
@@ -120,7 +120,7 @@ dark-theme may be swapped for light-theme
 
     <div class="radioplayer light-theme">
 
-        <h1 class="access">Radio Hamburg</h1>
+        <h1 class="access">QuantumCast FM</h1>
 
         <div class="radioplayer-globalnav-wrapper">
 
@@ -267,8 +267,7 @@ dark-theme may be swapped for light-theme
 
             <div class="radioplayer-head">
 
-                <a class="stn-logo" href="https://streamabc.com" target="_blank" id="station-logo-link" rel="external">Radio
-                    Hamburg</a>
+                <a class="stn-logo" href="https://streamabc.com" target="_blank" id="station-logo-link" rel="external">QuantumCast FM</a>
 
                 <div id="controls">
                     <h2 class="access">Player Controls</h2>
@@ -352,6 +351,7 @@ dark-theme may be swapped for light-theme
                     <div id="TxtType" class="playinfo">Streamtype: <span></span></div>
                     <div id="TxtDuration" class="playinfo" style="display:none">Duration: <span></span></div>
 
+                    <div id="Cover" style="width:33%;height:33%"><a href="https://streamabc.com" target="_blank"><img src="https://s3.eu-central-1.amazonaws.com/streamabc-player/sabc/channels/logo.png"></a></div>
 
                     <!--
         * Plugin Space Ends here
@@ -376,6 +376,7 @@ dark-theme may be swapped for light-theme
 <![endif]-->
 
 <script type="text/javascript" src="//playerservices.streamabc.net/radio.js"></script>
+<!-- <script type="text/javascript" src="http://localhost:3000/radio.js"></script> -->
 
 <script type="text/javascript">
     //radioplayer.init();
@@ -383,6 +384,7 @@ dark-theme may be swapped for light-theme
     var maxSkips = 4; // allowed skips per duration (GEMA rules)
     var maxSkipDuration = 1; // duration for max skips in hours (GEMA rules)
     var skipTimer = null;
+    var defaultCover = 'https://s3.eu-central-1.amazonaws.com/streamabc-player/sabc/channels/logo.png';
 
     // helper function to show if skipping is available and when
     var skipDisplay = function (time) {
@@ -401,25 +403,29 @@ dark-theme may be swapped for light-theme
     // create a new instance of sABC.Radio and activate the usage of Radioplayer
     // the argument is a config object for sABC.Radio
     var radio = sABC.newRadio({
-        debug: false,
+        debug: true,
         radioplayer: true,
-				apikey: "abc"
+        apikey: "abc"
     });
 
     // set-up the channel data and activate skipping if its enabled in streamABC infrastructure
     radio.setChannel({
         "skip": true,
         "streamurl": {
-            "lq": "http://sabc-test.stream.vip/1/mp3-256/",
-            "hq": "http://sabc-test.stream.vip/1/mp3-256/"
+            "lq": "http://quantumcast.stream.vip/dyn-sm/mp3-192/",
+            "hq": "http://quantumcast.stream.vip/dyn-sm/mp3-192/"
         },
-        "name": "streamABC LIVE",
+        "name": "QuantumCast FM",
     }, "lq");
 
     // attach event handler for metadata events
     radio.on("metadata", function (data) {
         console.log("metadata", data);
         $('#TxtNowPlaying span').text(data.artist + " - " + data.song);
+        if (data.meta && data.meta.length>0) {
+            $('#Cover img').attr("src", data.meta[0].largeimage)
+            $('#Cover a').attr("href", data.meta[0].trackurl)
+        }
     })
 
     // attach event handler for metanext events
