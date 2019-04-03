@@ -37,9 +37,7 @@
     <link type="text/css" rel="stylesheet" media="screen" href="style/radioplayer.min.css"/>
 
     <link type="text/css" rel="stylesheet" media="screen" href="style/theme.css"/>
-
-    <link type="text/css" rel="stylesheet" media="screen"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <script type="text/javascript">
         /**
@@ -341,10 +339,13 @@ dark-theme may be swapped for light-theme
                     *
                     -->
 
-                    <button id="BtnSkip"><i class="fa fa-step-forward" aria-hidden="true"></i> <span>Skip</span>
-                    </button>
+                    <button id="BtnSkip"><i class="fa fa-step-forward" aria-hidden="true"></i> <span>Skip</span></button>
 
                     <button id="BtnLive"><i class="fa fa-eject" aria-hidden="true"></i> <span>Live</span></button>
+
+                    <div class="playinfo">
+                    Stream-Qualität: <button id="BtnQualityLQ"><i class="fa fa-star-half-alt" aria-hidden="true"></i><span>LQ</span></button> <button id="BtnQualityHQ"><i class="fa fa-star" aria-hidden="true"></i><span>HQ</span></button>
+                    </div>
 
                     <div id="TxtNowPlaying" class="playinfo">Now Playing: <span></span></div>
                     <div id="TxtNextPlaying" class="playinfo">Next: <span></span></div>
@@ -385,6 +386,15 @@ dark-theme may be swapped for light-theme
     var skipTimer = null;
     var defaultCover = 'https://s3.eu-central-1.amazonaws.com/streamabc-player/sabc/channels/logo.png';
 
+    var channel = {
+        "skip": true,
+        "streamurl": {
+            "lq": "http://quantumcast.stream.vip/channel99/mp3-128/",
+            "hq": "http://quantumcast.stream.vip/channel99/mp3-192/"
+        },
+        "name": "QuantumCast FM",
+    };
+
     // helper function to show if skipping is available and when
     var skipDisplay = function (time) {
         if (skipTimer) {
@@ -408,14 +418,7 @@ dark-theme may be swapped for light-theme
     });
 
     // set-up the channel data and activate skipping if its enabled in streamABC infrastructure
-    radio.setChannel({
-        "skip": true,
-        "streamurl": {
-            "lq": "http://quantumcast.stream.vip/dyn-sm/mp3-192/",
-            "hq": "http://quantumcast.stream.vip/dyn-sm/mp3-192/"
-        },
-        "name": "QuantumCast FM",
-    }, "lq");
+    radio.setChannel(channel, "lq");
 
     // attach event handler for metadata events
     radio.on("metadata", function (data) {
@@ -484,7 +487,7 @@ dark-theme may be swapped for light-theme
         $('#TxtDuration span').text(duration + "s");
     });
 
-    radio.on("play", function (duration) {
+    radio.on("play", function (data) {
         $('#TxtDuration').show();
     });
 
@@ -502,15 +505,25 @@ dark-theme may be swapped for light-theme
         console.log("Player initialized");
 
         // Initialize buttons when player is ready
-        $("#BtnSkip").on("click", function (e) {
+        $(document).on("click", "#BtnSkip", function (e) {
             e.preventDefault();
             radio.skip();
         })
 
-        $("#BtnLive").on("click", function (e) {
+        $(document).on("click", "#BtnLive", function (e) {
             e.preventDefault();
             radio.live();
         })
+
+        $(document).on("click", "#BtnQualityLQ", function (e) {
+            e.preventDefault();
+            radio.switch(channel, "lq");
+        })
+
+        $(document).on("click", "#BtnQualityHQ", function (e) {
+            e.preventDefault();
+            radio.switch(channel, "hq");
+        })        
 
     })
 
