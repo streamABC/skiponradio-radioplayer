@@ -1,5 +1,5 @@
 /**
- * Version: 1.2.17
+ * Version: 1.2.22
  * 
  * All intellectual property rights in this Software throughout the world belong to UK Radioplayer, 
  * rights in the Software are licensed (not sold) to subscriber stations, and subscriber stations 
@@ -37,11 +37,9 @@ radioplayer.lang = {
 	                            'Was Cookies sind und wie wir sie verwenden, können Sie <a href="http://www.radioplayer.de/cookies/" target="_blank">hier nachlesen</a>. ' +
 	                            'Indem Sie den Radioplayer verwenden, erklären Sie sich mit der Nutzung von Cookies einverstanden.',
 
-	    cookie_consent:         'Der radioplayer verwendet für seine umfangreichen Funktionen Browser-Cookies. So können Sie zum Beispiel Ihre Senderliste ' +
-								'oder die zuletzt gehörten Sender speichern. Mit der Nutzung des radioplayers erklären Sie sich damit einverstanden, ' +
-								'dass wir Cookies verwenden. <a href="http://www.radioplayer.de/cookies/" target="_blank">Weitere Informationen</a>. ',
+		cookie_consent: '<p>Der Radioplayer verwendet und speichert Daten (aus Cookies und der IP-Adresse) zu Ihrem Hörverhalten, Ihren Favoriten und Ihrem Standort.</p><p>Diese Daten werden benötigt um Sender in der Nähe und Ihre Favoriten anzuzeigen, sowie um bessere Empfehlungen aussprechen zu können. Weitere Informationen hierzu erhalten Sie in unseren <a target="_blank" href="https://www.radioplayer.de/impressum-datenschutz.html">Datenschutzbestimmungen</a>.</p>',
 								
-		cookie_consent_dismiss:	'OK',
+		cookie_consent_dismiss:	'Akzeptieren',
 
 		apps_download:			'Apps zum Download'
 	},

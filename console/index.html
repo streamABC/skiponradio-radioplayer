@@ -1,107 +1,103 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>
-<html class="ie ie6 lte9 lte8 lte7" lang="en"> <![endif]-->
-<!--[if IE 7]>
-<html class="ie ie7 lte9 lte8 lte7" lang="en"> <![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8 lte9 lte8" lang="en"> <![endif]-->
-<!--[if IE 9]>
-<html class="ie ie9 lte9" lang="en"> <![endif]-->
-<!--[if gt IE 9]>
-<html lang="en"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7" lang="en"> <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7" lang="en"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 lte9 lte8" lang="en"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9 lte9" lang="en"> <![endif]-->
+<!--[if gt IE 9]>  <html lang="en"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <!--
-    Version: 1.2.17
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--
+Version: 1.2.22
 
-    All intellectual property rights in this Software throughout the world belong to UK Radioplayer,
-    rights in the Software are licensed (not sold) to subscriber stations, and subscriber stations
-    have no rights in, or to, the Software other than the right to use it in accordance with the
-    Terms and Conditions at www.radioplayer.co.uk/terms. You shall not produce any derivate works
-    based on whole or part of the Software, including the source code, for any other purpose other
-    than for usage associated with connecting to the UK Radioplayer Service in accordance with these
-    Terms and Conditions, and you shall not convey nor sublicense the Software, including the source
-    code, for any other purpose or to any third party, without the prior written consent of UK Radioplayer.
-    -->
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
-    <meta name="DCTERMS.created" content=""/>
-    <meta name="DCTERMS.modified" content=""/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="schema.dcterms" href="https://purl.org/dc/terms/"/>
+All intellectual property rights in this Software throughout the world belong to UK Radioplayer,
+rights in the Software are licensed (not sold) to subscriber stations, and subscriber stations
+have no rights in, or to, the Software other than the right to use it in accordance with the
+Terms and Conditions at www.radioplayer.co.uk/terms. You shall not produce any derivate works
+based on whole or part of the Software, including the source code, for any other purpose other
+than for usage associated with connecting to the UK Radioplayer Service in accordance with these
+Terms and Conditions, and you shall not convey nor sublicense the Software, including the source
+code, for any other purpose or to any third party, without the prior written consent of UK Radioplayer.
+-->
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="DCTERMS.created" content="" />
+<meta name="DCTERMS.modified" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="schema.dcterms" href="https://purl.org/dc/terms/" />
 
-    <title>sABC Reference Skip On Radio</title>
+<title>sABC Reference Skip On Radio</title>
 
-    <link type="text/css" rel="stylesheet" media="screen" href="style/radioplayer.min.css"/>
+<link type="text/css" rel="stylesheet" media="screen" href="style/radioplayer.min.css" />
 
-    <link type="text/css" rel="stylesheet" media="screen" href="style/theme.css"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-    <script type="text/javascript">
-        /**
-         * Console Settings
-         */
+<link type="text/css" rel="stylesheet" media="screen" href="style/theme.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script type="text/javascript">
+/**
+ * Console Settings
+ */
 
         var currentStationID = "0";
         var currentStationName = "QuantumCast FM";
 
-        // -- nowPlayingSource can be changed from 'default' to one of: 'default-no-stream', 'stream', 'SI', 'PI'
-        var nowPlayingSource = 'default';
+// -- nowPlayingSource can be changed from 'default' to one of: 'default-no-stream', 'stream', 'SI', 'PI'
+var nowPlayingSource = 'default';
 
-        // -- xDomainProxyUrl should be the full URL to the xdomainproxy.html file, which by default is found in the preroll-framework directory
-        //var xDomainProxyUrl = "https://your-console-domain.com/console-path/preroll-framework/xdomainproxy.html";
-        var xDomainProxyUrl = "";
+// -- xDomainProxyUrl should be the full URL to the xdomainproxy.html file, which by default is found in the preroll-framework directory
+//var xDomainProxyUrl = "https://your-console-domain.com/console-path/preroll-framework/xdomainproxy.html";
+var xDomainProxyUrl = "";
 
-        // -- initOptions can be populated with settings for actions when the console starts. See integration guide for details.
-        var initOptions = {
-            interstitial: {
-                enabled: false,
-                url: 'preroll-framework/'
-            },
-            songaction: {
-                enabled: false,
-                type: 'Buy',
-                baseurl: 'https://www.your-affiliate-url.com/'
-            },
-            overlay: {
-                enabled: false,
-                url: 'preroll-framework/',
-                mute: true
-            }
-        };
+// -- initOptions can be populated with settings for actions when the console starts. See integration guide for details.
+var initOptions = {
+	interstitial : {
+		enabled : false,
+		url : 'preroll-framework/'
+	},
+	songaction : {
+		enabled : false,
+		type : 'Buy',
+		baseurl : 'https://www.your-affiliate-url.com/'
+	},
+	overlay : {
+		enabled : false,
+		url : 'preroll-framework/',
+		mute : true
+	}
+};
 
 
-        /**
-         * Audio Settings (V3 API)
-         */
+/**
+ * Audio Settings (V3 API)
+ */
 
 // -- Set preferHtml5Audio to true to give preference to HTML audio playback over Flash
-        var preferHtml5Audio = true;
+var preferHtml5Audio = true;
 
-        // -- Set audioLive to true for live streaming, or false for on demand
-        var audioLive = true;
+// -- Set audioLive to true for live streaming, or false for on demand
+var audioLive = true;
 
-        // -- Added your primary stream details here
-        var audioFlash = [{
-            appendVersion: false,
-            audioType: 'http',
-            audioUrl: 'http://quantumcast.stream.vip/dyn-sm/mp3-192/',
-            audioServer: '',
-            audioEndpoint: ''
-        }];
+// -- Added your primary stream details here
+var audioFlash = [{
+	appendVersion: false,
+	audioType: 'http',
+	audioUrl: 'http://quantumcast.stream.vip/channel99/mp3-128/',
+	audioServer: '',
+	audioEndpoint: ''
+}];
 
-        // -- Add your HTML5 supported stream details here
-        var audioHTML = [{
-            audioType: 'http',
-            audioUrl: 'http://quantumcast.stream.vip/dyn-sm/mp3-192/'
-        }];
+// -- Add your HTML5 supported stream details here
+var audioHTML = [{
+    audioType: 'http',
+    audioUrl: 'http://quantumcast.stream.vip/channel99/mp3-128/'
+}];
 
-        // -- bufferTime may need to be adjusted in rare circumstances to facilitate faster loading
-        var bufferTime = 5;
+// -- bufferTime may need to be adjusted in rare circumstances to facilitate faster loading
+var bufferTime = 5;
 
-    </script>
+// If you, as a station, want to add a custom message after the Radioplayer GDPR text, you can enter it here. HTML elements are accepted, and it is encouraged to wrap your paragraphs in <p>tags</p>
+var gdprMessage = '';
+
+</script>
 </head>
 <body>
 
@@ -116,253 +112,244 @@ dark-theme may be swapped for light-theme
 -->
 <div class="console-wrapper">
 
-    <div class="radioplayer light-theme">
+  <div  class="radioplayer light-theme" >
 
-        <h1 class="access">QuantumCast FM</h1>
+	  <h1 class="access">QuantumCast FM</h1>
 
-        <div class="radioplayer-globalnav-wrapper">
+	<div class="radioplayer-globalnav-wrapper">
 
-            <div class="radioplayer-globalnav">
+		<div class="radioplayer-globalnav">
 
-                <button type="button" class="menu-btn overlay-btn" rel="toggle" role="button" aria-haspopup="true"
-                        aria-owns="overlay-container">
-                    <span>Toggle radioplayer.de Menu</span>
-                </button>
+		  <button type="button" class="menu-btn overlay-btn" rel="toggle" role="button" aria-haspopup="true" aria-owns="overlay-container">
+		    <span>Toggle radioplayer.de Menu</span>
+		  </button>
 
-                <a href="http://www.radioplayer.de/apps" target="_blank" title="Apps Download">
-                    <div id="rectangle">
-                        <img id="apps-download-img"/>
-                        <span>Apps Download</span>
-                    </div>
-                </a>
+		  <a href="http://www.radioplayer.de/apps" target="_blank" title="Apps Download">
+		  	<div id="rectangle">
+				<img id="apps-download-img"/>
+				<span>Apps Download</span>
+			</div>
+		  </a>
 
-                <div class="search-box">
-                    <fieldset>
-                        <h2 class="access">Search</h2>
-                        <input type="text" name="searchq" id="search-input" value="" maxlength="27" autocomplete="off"/>
-                        <button type="button" id="search-button" title="Search"><span>Search</span></button>
-                        <button type="button" id="search-clear" title="Clear search terms">
-                            <span>Clear search terms</span></button>
-                    </fieldset>
-                </div>
+		  <div class="search-box">
+			<fieldset>
+				<h2 class="access">Search</h2>
+				<input type="text" name="searchq" id="search-input" value="" maxlength="27" autocomplete="off" />
+				<button type="button" id="search-button" title="Search"><span>Search</span></button>
+				<button type="button" id="search-clear" title="Clear search terms"><span>Clear search terms</span></button>
+			</fieldset>
+		  </div>
 
-                <span class="rp-logo overlay-btn">
+		  <span class="rp-logo overlay-btn">
 			radioplayer.de
 		  </span>
 
-            </div>
+		</div>
 
-        </div>
+	</div>
 
-        <div id="overlay-container" class="overlay-container">
+	<div id="overlay-container" class="overlay-container">
 
-            <div class="search-container">
+		  <div class="search-container">
 
-                <div class="tabs" role="navigation">
-                    <ul id="search-nav-toggle" class="nav">
-                        <li>
-                            <a href="#">All<span class="menu_toggle"></span></a>
-                        </li>
-                    </ul>
-                    <ul id="search-nav-main" class="nav">
-                        <li class="first" data-content="searchall">
-                            <a href="#" role="button" aria-owns="search-all-cont"><span>All</span></a>
-                        </li>
-                        <li data-content="searchlive">
-                            <a href="#" role="button" aria-owns="search-live-cont"><span>Live</span></a>
-                        </li>
-                        <li data-content="searchod">
-                            <a href="#" role="button" aria-owns="search-od-cont"><span>Catch Up</span></a>
-                        </li>
-                    </ul>
-                </div>
+			<div class="tabs" role="navigation">
+			  <ul id="search-nav-toggle" class="nav">
+				<li>
+					<a href="#">All<span class="menu_toggle"></span></a>
+				</li>
+			  </ul>
+			  <ul id="search-nav-main" class="nav">
+				<li class="first" data-content="searchall">
+				  <a href="#" role="button" aria-owns="search-all-cont"><span>All</span></a>
+				</li>
+				<li data-content="searchlive">
+				  <a href="#" role="button" aria-owns="search-live-cont"><span>Live</span></a>
+				</li>
+				<li data-content="searchod">
+				  <a href="#" role="button" aria-owns="search-od-cont"><span>Catch Up</span></a>
+				</li>
+			  </ul>
+			</div>
 
-                <div class="search-wrapper">
+			<div class="search-wrapper">
 
-                    <div class="tab-container scrollable-wrapper" id="search-all-cont"></div>
+			  <div class="tab-container scrollable-wrapper" id="search-all-cont"></div>
 
-                    <div class="tab-container scrollable-wrapper" id="search-live-cont"></div>
+			  <div class="tab-container scrollable-wrapper" id="search-live-cont"></div>
 
-                    <div class="tab-container scrollable-wrapper" id="search-od-cont"></div>
+			  <div class="tab-container scrollable-wrapper" id="search-od-cont"></div>
 
-                    <span class="spinner"><img src="img/spinner.gif" alt=""/></span>
+			  <span class="spinner"><img src="img/spinner.gif" alt="" /></span>
 
-                </div>
+			</div>
 
-            </div>
+		  </div>
 
-            <div class="suggest-container" data-results="0">
+		  <div class="suggest-container" data-results="0">
 
-                <div class="scrollable-wrapper">
+			<div class="scrollable-wrapper">
 
-                    <div id="suggest-results"></div>
+				<div id="suggest-results"></div>
 
-                    <div class="suggest-item show-all"><a href="#"></a></div>
+				<div class="suggest-item show-all"><a href="#"></a></div>
 
-                </div>
+			</div>
 
-            </div>
+		  </div>
 
-            <div class="menu-container">
+		  <div class="menu-container">
 
-                <div class="tabs" role="navigation">
-                    <ul id="menu-nav-toggle" class="nav">
-                        <li>
-                            <a href="#">My Stations<span class="menu_toggle"></span></a>
-                        </li>
-                    </ul>
-                    <ul id="menu-nav-main" class="nav">
-                        <li class="first" data-color="#ff4539" data-content="mystations">
-                            <a href="#" role="button" aria-owns="mystations-container"><span>My Stations</span></a>
-                        </li>
-                        <li data-color="#9b2d77" data-content="history">
-                            <a href="#" role="button" aria-owns="history-container"><span>Recent</span></a>
-                        </li>
-                        <li data-color="#03303d" data-content="recommended">
-                            <a href="#" role="button" aria-owns="recom-container"><span>Recommended</span></a>
-                        </li>
-                        <li data-color="#f6b220" data-content="azlist">
-                            <a href="#" role="button" aria-owns="az-container"><span>A-Z List</span></a>
-                        </li>
-                    </ul>
-                </div>
+			<div class="tabs" role="navigation">
+			  <ul id="menu-nav-toggle" class="nav">
+				<li>
+					<a href="#">My Stations<span class="menu_toggle"></span></a>
+				</li>
+			  </ul>
+			  <ul id="menu-nav-main" class="nav">
+				<li class="first" data-color="#ff4539" data-content="mystations">
+				  <a href="#" role="button" aria-owns="mystations-container"><span>My Stations</span></a>
+				</li>
+				<li data-color="#9b2d77" data-content="history">
+				  <a href="#" role="button" aria-owns="history-container"><span>Recent</span></a>
+				</li>
+				<li data-color="#03303d" data-content="recommended">
+				  <a href="#" role="button" aria-owns="recom-container"><span>Recommended</span></a>
+				</li>
+				<li data-color="#f6b220" data-content="azlist">
+				  <a href="#" role="button" aria-owns="az-container"><span>A-Z List</span></a>
+				</li>
+			  </ul>
+			</div>
 
-                <div class="tabs-wrapper">
+			<div class="tabs-wrapper">
 
-                    <div class="tab-container scrollable-wrapper" id="mystations-container"></div>
+			  <div class="tab-container scrollable-wrapper" id="mystations-container"></div>
 
-                    <div class="tab-container scrollable-wrapper" id="history-container"></div>
+			  <div class="tab-container scrollable-wrapper" id="history-container"></div>
 
-                    <div class="tab-container scrollable-wrapper" id="recom-container"></div>
+			  <div class="tab-container scrollable-wrapper" id="recom-container"></div>
 
-                    <div class="tab-container" id="az-container">
+			  <div class="tab-container" id="az-container">
 
-                        <div class="alphabet">
-                            <ul></ul>
-                        </div>
+				<div class="alphabet">
+				  <ul></ul>
+				</div>
 
-                        <div class="sticky-divide-wrapper">
-                            <div class="sticky-divide">#</div>
+				<div class="sticky-divide-wrapper">
+				  <div class="sticky-divide">#</div>
 
-                            <div class="scrollable-wrapper azlist-container" id="azlist-container"></div>
-                        </div>
+				  <div class="scrollable-wrapper azlist-container" id="azlist-container"></div>
+				</div>
 
-                    </div>
+			  </div>
 
-                    <span class="spinner"><img src="img/spinner.gif" alt=""/></span>
+			  <span class="spinner"><img src="img/spinner.gif" alt="" /></span>
 
-                </div>
+			</div>
 
-            </div>
+		  </div>
 
-        </div>
+	</div>
 
-        <div class="radioplayer-emp-container">
-            <div id="empv3"></div>
-        </div>
-
-        <div class="radioplayer-localwrapper">
-
-            <div class="radioplayer-head">
-
-                <a class="stn-logo" href="https://streamabc.com" target="_blank" id="station-logo-link" rel="external">QuantumCast FM</a>
-
-                <div id="controls">
-                    <h2 class="access">Player Controls</h2>
-
-                    <div id="mystations-toggle" class="optimise">
-                        <button type="button" id="toggle-mystations"><span>Toggle this station in My Stations</span>
-                        </button>
-                    </div>
-
-                    <div id="play-controls" class="optimise">
-                        <button type="button" id="play" title="Play"><span>Play</span></button>
-                        <button type="button" id="pause" title="Pause"><span>Pause</span></button>
-                        <button type="button" id="stop" title="Stop"><span>Stop</span></button>
-                    </div>
-
-                    <div id="volume-controls">
-                        <div id="volume-control" class="p100"></div>
-                        <button type="button" id="volume-mute" class="access" tabindex="0">
-                            <span>Mute or unmute volume</span></button>
-                        <button type="button" id="volume-1" class="access" tabindex="0"><span>Set volume to 20%</span>
-                        </button>
-                        <button type="button" id="volume-2" class="access" tabindex="0"><span>Set volume to 40%</span>
-                        </button>
-                        <button type="button" id="volume-3" class="access" tabindex="0"><span>Set volume to 60%</span>
-                        </button>
-                        <button type="button" id="volume-4" class="access" tabindex="0"><span>Set volume to 80%</span>
-                        </button>
-                        <button type="button" id="volume-5" class="access" tabindex="0"><span>Set volume to 100%</span>
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="now-playing-strip">
-
-                    <div id="live-strip" class="loading">
-
-                        <div class="loading-indicator"></div>
-                        <div class="live-info">
-                            <span id="live" class="live-indicator">Live</span>
-                            <div class="scrolling-container" tabindex="0">
-                                <div class="scrolling-text"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="od-strip">
-
-                        <div id="duration">Loading...</div>
-
-                        <div id="progress-scrubber-background">
-
-                            <div id="progress-scrubber-playback-bar"></div>
-                            <div id="progress-scrubber-load-bar"></div>
-                            <div id="od-title"></div>
-
-                            <div id="progress-scrubber-handle"></div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="radioplayer-body">
-                <div class="radioplayer-plugin">
-                    <!--
-                    *
-                    * Plugin Space Starts here
-                    *
-                    -->
-
-                    <button id="BtnSkip"><i class="fa fa-step-forward" aria-hidden="true"></i> <span>Skip</span></button>
-
-                    <button id="BtnLive"><i class="fa fa-eject" aria-hidden="true"></i> <span>Live</span></button>
-
-                    <div class="playinfo">
-                    Stream-Qualität: <button id="BtnQualityLQ"><i class="fa fa-star-half-alt" aria-hidden="true"></i><span>LQ</span></button> <button id="BtnQualityHQ"><i class="fa fa-star" aria-hidden="true"></i><span>HQ</span></button>
-                    </div>
-
-                    <div id="TxtNowPlaying" class="playinfo">Now Playing: <span></span></div>
-                    <div id="TxtNextPlaying" class="playinfo">Next: <span></span></div>
-                    <div id="TxtType" class="playinfo">Streamtype: <span></span></div>
-                    <div id="TxtDuration" class="playinfo" style="display:none">Duration: <span></span></div>
-
-                    <div id="Cover" style="width:33%;height:33%"><a href="https://streamabc.com" target="_blank"><img src="https://s3.eu-central-1.amazonaws.com/streamabc-player/sabc/channels/logo.png"></a></div>
-
-                    <!--
-        * Plugin Space Ends here
-        *
-        -->
-                </div>
-            </div>
-
-        </div>
+    <div class="radioplayer-emp-container">
+        <div id="empv3"></div>
     </div>
+
+	<div class="radioplayer-localwrapper">
+
+		<div class="radioplayer-head">
+
+			<a class="stn-logo" href="https://streamabc.com" target="_blank" id="station-logo-link" rel="external">QuantumCast FM</a>
+
+			<div id="controls">
+				<h2 class="access">Player Controls</h2>
+
+				<div id="mystations-toggle" class="optimise">
+					<button type="button" id="toggle-mystations"><span>Toggle this station in My Stations</span></button>
+				</div>
+
+				<div id="play-controls" class="optimise">
+					<button type="button" id="play" title="Play"><span>Play</span></button>
+					<button type="button" id="pause" title="Pause"><span>Pause</span></button>
+					<button type="button" id="stop" title="Stop"><span>Stop</span></button>
+				</div>
+
+				<div id="volume-controls">
+					<div id="volume-control" class="p100"></div>
+					<button type="button" id="volume-mute" class="access" tabindex="0"><span>Mute or unmute volume</span></button>
+					<button type="button" id="volume-1" class="access" tabindex="0"><span>Set volume to 20%</span></button>
+					<button type="button" id="volume-2" class="access" tabindex="0"><span>Set volume to 40%</span></button>
+					<button type="button" id="volume-3" class="access" tabindex="0"><span>Set volume to 60%</span></button>
+					<button type="button" id="volume-4" class="access" tabindex="0"><span>Set volume to 80%</span></button>
+					<button type="button" id="volume-5" class="access" tabindex="0"><span>Set volume to 100%</span></button>
+				</div>
+
+			</div>
+
+			<div class="now-playing-strip">
+
+			  <div id="live-strip" class="loading">
+
+                <div class="loading-indicator"></div>
+                <div class="live-info">
+                    <span id="live" class="live-indicator">Live</span>
+                    <div class="scrolling-container" tabindex="0">
+                        <div class="scrolling-text"></div>
+                    </div>
+                </div>
+			  </div>
+
+			  <div id="od-strip">
+
+		  		<div id="duration">Loading...</div>
+
+		  		<div id="progress-scrubber-background">
+
+					<div id="progress-scrubber-playback-bar"></div>
+					<div id="progress-scrubber-load-bar"></div>
+					<div id="od-title"></div>
+
+					<div id="progress-scrubber-handle"></div>
+
+				</div>
+
+			  </div>
+
+			</div>
+
+		</div>
+		<div class="radioplayer-body">
+			<div class="radioplayer-plugin">
+<!--
+*
+* Plugin Space Starts here
+*
+-->
+
+				<button id="BtnSkip"><i class="fa fa-step-forward" aria-hidden="true"></i> <span>Skip</span></button>
+
+				<button id="BtnLive"><i class="fa fa-eject" aria-hidden="true"></i> <span>Live</span></button>
+
+				<div class="playinfo">
+					Stream-Qualität: <button id="BtnQualityLQ"><i class="fa fa-star-half-alt" aria-hidden="true"></i><span>LQ</span></button> <button id="BtnQualityHQ"><i class="fa fa-star" aria-hidden="true"></i><span>HQ</span></button>
+				</div>
+
+				<div id="TxtNowPlaying" class="playinfo">Now Playing: <span></span></div>
+				<div id="TxtNextPlaying" class="playinfo">Next: <span></span></div>
+				<div id="TxtType" class="playinfo">Streamtype: <span></span></div>
+				<div id="TxtDuration" class="playinfo" style="display:none">Duration: <span></span></div>
+
+				<div id="Cover" style="width:33%;height:33%"><a href="https://streamabc.com" target="_blank"><img src="https://s3.eu-central-1.amazonaws.com/streamabc-player/sabc/channels/logo.png"></a></div>
+
+			<!--
+* Plugin Space Ends here
+*
+-->
+			</div>
+		</div>
+
+	</div>
+  </div>
 </div>
 <!-- jQuery UI with only: core, widget, mouse, position, draggable and droppable -->
 <script type="text/javascript" src="libs/jquery-1.10.0.min.js"></script>
@@ -379,153 +366,158 @@ dark-theme may be swapped for light-theme
 <script type="text/javascript" src="//playerservices.streamabc.net/radio.js"></script>
 
 <script type="text/javascript">
-    //radioplayer.init();
+	//radioplayer.init();
 
-    var maxSkips = 4; // allowed skips per duration (GEMA rules)
-    var maxSkipDuration = 1; // duration for max skips in hours (GEMA rules)
-    var skipTimer = null;
-    var defaultCover = 'https://s3.eu-central-1.amazonaws.com/streamabc-player/sabc/channels/logo.png';
+	var maxSkips = 4; // allowed skips per duration (GEMA rules)
+	var maxSkipDuration = 1; // duration for max skips in hours (GEMA rules)
+	var skipTimer = null;
+	var defaultCover = 'https://s3.eu-central-1.amazonaws.com/streamabc-player/sabc/channels/logo.png';
 
-    var channel = {
-        "skip": true,
-        "streamurl": {
-            "lq": "http://quantumcast.stream.vip/channel99/mp3-128/",
-            "hq": "http://quantumcast.stream.vip/channel99/mp3-192/"
-        },
-        "name": "QuantumCast FM",
-    };
+	var channel = {
+		"skip": true,
+		"streamurl": {
+			"lq": "http://quantumcast.stream.vip/channel99/mp3-128/",
+			"hq": "http://quantumcast.stream.vip/channel99/mp3-192/"
+		},
+		"name": "QuantumCast FM",
+	};
 
-    // helper function to show if skipping is available and when
-    var skipDisplay = function (time) {
-        if (skipTimer) {
-            clearTimeout(skipTimer);
-            skipTimer = null;
-        }
-        if (radio.getDuration() < time) {
-            $("#BtnSkip span").text("Skip in " + (time - radio.getDuration()) + "s");
-            skipTimer = setTimeout(function() {
-                skipDisplay(time)
-            }, 1000);
-        }
-    }
+	// helper function to show if skipping is available and when
+	var skipDisplay = function (time) {
+		if (skipTimer) {
+			clearTimeout(skipTimer);
+			skipTimer = null;
+		}
+		if (radio.getDuration() < time) {
+			$("#BtnSkip span").text("Skip in " + (time - radio.getDuration()) + "s");
+			skipTimer = setTimeout(function() {
+				skipDisplay(time)
+			}, 1000);
+		}
+	}
 
-    // create a new instance of sABC.Radio and activate the usage of Radioplayer
-    // the argument is a config object for sABC.Radio
-    var radio = sABC.newRadio({
-        debug: true,
-        radioplayer: true,
-        apikey: "abc"
-    });
+	// create a new instance of sABC.Radio and activate the usage of Radioplayer
+	// the argument is a config object for sABC.Radio
+	var radio = sABC.newRadio({
+		debug: true,
+		radioplayer: true,
+		apikey: "abc"
+	});
 
-    // set-up the channel data and activate skipping if its enabled in streamABC infrastructure
-    radio.setChannel(channel, "lq");
+	// set-up the channel data and activate skipping if its enabled in streamABC infrastructure
+	radio.setChannel(channel, "lq");
+	$("#BtnQualityLQ").prop("disabled", true);
 
-    // attach event handler for metadata events
-    radio.on("metadata", function (data) {
-        console.log("metadata", data);
-        $('#TxtNowPlaying span').text(data.artist + " - " + data.song);
-        if (data.meta && data.meta.length>0) {
-            $('#Cover img').attr("src", data.meta[0].largeimage)
-            $('#Cover a').attr("href", data.meta[0].trackurl)
-        }
-    })
+	// attach event handler for metadata events
+	radio.on("metadata", function (data) {
+		console.log("metadata", data);
+		$('#TxtNowPlaying span').text(data.artist + " - " + data.song);
+		if (data.meta && data.meta.length>0) {
+			$('#Cover img').attr("src", data.meta[0].largeimage)
+			$('#Cover a').attr("href", data.meta[0].trackurl)
+		}
+	})
 
-    // attach event handler for metanext events
-    radio.on("metanext", function (data) {
-        console.log("metanext", data);
-        $('#TxtNextPlaying span').text(data.artist + " - " + data.song);
-    })
+	// attach event handler for metanext events
+	radio.on("metanext", function (data) {
+		console.log("metanext", data);
+		$('#TxtNextPlaying span').text(data.artist + " - " + data.song);
+	})
 
-    // attach event handler for streamtype events (skipped or not)
-    radio.on("streamtype", function (data) {
-        $('#TxtType span').text(data.skipped ? "User-Stream" : "Live-Stream");
-        $("#BtnLive").prop("disabled", data.skipped ? false : true);
-    })
+	// attach event handler for streamtype events (skipped or not)
+	radio.on("streamtype", function (data) {
+		$('#TxtType span').text(data.skipped ? "User-Stream" : "Live-Stream");
+		$("#BtnLive").prop("disabled", data.skipped ? false : true);
+	})
 
-    // attach event handler for skippable events (skipped or not)
-    radio.on("skippable", function (skippable) {
-        if (skippable === true && radio.getSkipCount() < maxSkips) {
+	// attach event handler for skippable events (skipped or not)
+	radio.on("skippable", function (skippable) {
+		if (skippable === true && radio.getSkipCount() < maxSkips) {
 
-            console.log("Stream is skippable");
-            $("#BtnSkip").prop("disabled", false);
-            $("#BtnSkip span").text("Skip to next song");
+			console.log("Stream is skippable");
+			$("#BtnSkip").prop("disabled", false);
+			$("#BtnSkip span").text("Skip to next song");
 
-            if (skipTimer) {
-                clearTimeout(skipTimer);
-                skipTimer = null;
-            }
+			if (skipTimer) {
+				clearTimeout(skipTimer);
+				skipTimer = null;
+			}
 
-        } else {
+		} else {
 
-            console.log("Stream is NOT skippable");
+			console.log("Stream is NOT skippable");
 
-            $("#BtnSkip").prop("disabled", true);
-            $("#BtnSkip span").text("Skip to next song");
-            if (radio.getSkipCount() < maxSkips) {
-                skipDisplay(10);
-            } else {
-                var skipDate = new Date(radio.getSkipFirstDate().getTime());
-                skipDate.setHours(skipDate.getHours() + 1);
-                skipDisplay(parseInt((skipDate - new Date()) / 1000));
-            }
-        }
-    })
+			$("#BtnSkip").prop("disabled", true);
+			$("#BtnSkip span").text("Skip to next song");
+			if (radio.getSkipCount() < maxSkips) {
+				skipDisplay(10);
+			} else {
+				var skipDate = new Date(radio.getSkipFirstDate().getTime());
+				skipDate.setHours(skipDate.getHours() + 1);
+				skipDisplay(parseInt((skipDate - new Date()) / 1000));
+			}
+		}
+	})
 
-    // attach event handler for skip events
-    radio.on("skip", function (channel) {
-        console.log("Skip-Anzahl: " + radio.getSkipCount());
-        if (radio.getSkipCount() === maxSkips) {
-            // Set a timer that resets skip after a duration (GEMA rules)
-            console.log("Setze Reset-Timer");
-            setTimeout(function () {
-                    radio.resetSkipFirstDate();
-            }, maxSkipDuration * 60 * 60 * 1000);
-        }
-    });
+	// attach event handler for skip events
+	radio.on("skip", function (channel) {
+		console.log("Skip-Anzahl: " + radio.getSkipCount());
+		if (radio.getSkipCount() === maxSkips) {
+			// Set a timer that resets skip after a duration (GEMA rules)
+			console.log("Setze Reset-Timer");
+			setTimeout(function () {
+				radio.resetSkipFirstDate();
+			}, maxSkipDuration * 60 * 60 * 1000);
+		}
+	});
 
-    radio.on("playing", function (duration) {
-        $('#TxtDuration span').text(duration + "s");
-    });
+	radio.on("playing", function (duration) {
+		$('#TxtDuration span').text(duration + "s");
+	});
 
-    radio.on("play", function (data) {
-        $('#TxtDuration').show();
-    });
+	radio.on("play", function (data) {
+		$('#TxtDuration').show();
+	});
 
-    radio.on("pause", function (duration) {
-        $('#TxtDuration').hide();
-    });
+	radio.on("pause", function (duration) {
+		$('#TxtDuration').hide();
+	});
 
-    radio.on("stop", function (duration) {
-        $('#TxtDuration').hide();
-    });
+	radio.on("stop", function (duration) {
+		$('#TxtDuration').hide();
+	});
 
-    // initialize player
-    radio.init().then(function () {
+	// initialize player
+	radio.init().then(function () {
 
-        console.log("Player initialized");
+		console.log("Player initialized");
 
-        // Initialize buttons when player is ready
-        $(document).on("click", "#BtnSkip", function (e) {
-            e.preventDefault();
-            radio.skip();
-        })
+		// Initialize buttons when player is ready
+		$(document).on("click", "#BtnSkip", function (e) {
+			e.preventDefault();
+			radio.skip();
+		})
 
-        $(document).on("click", "#BtnLive", function (e) {
-            e.preventDefault();
-            radio.live();
-        })
+		$(document).on("click", "#BtnLive", function (e) {
+			e.preventDefault();
+			radio.live();
+		})
 
-        $(document).on("click", "#BtnQualityLQ", function (e) {
-            e.preventDefault();
-            radio.switch(channel, "lq");
-        })
+		$(document).on("click", "#BtnQualityLQ", function (e) {
+			e.preventDefault();
+			$("#BtnQualityLQ").prop("disabled", true);
+			$("#BtnQualityHQ").prop("disabled", false);
+			radio.switch(channel, "lq");
+		})
 
-        $(document).on("click", "#BtnQualityHQ", function (e) {
-            e.preventDefault();
-            radio.switch(channel, "hq");
-        })        
+		$(document).on("click", "#BtnQualityHQ", function (e) {
+			e.preventDefault();
+			$("#BtnQualityLQ").prop("disabled", false);
+			$("#BtnQualityHQ").prop("disabled", true);
+			radio.switch(channel, "hq");
+		})
 
-    })
+	})
 
 </script>
 </body>

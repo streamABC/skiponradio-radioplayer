@@ -1,5 +1,5 @@
 /**
- * Version: 1.2.17
+ * Version: 1.2.22
  * 
  * @name overlay
  * @description Handling of the opening and closing of overlays

@@ -1,5 +1,5 @@
 /**
- * Version: 1.2.17
+ * Version: 1.2.22
  * 
  * @name playing
  * @description All handling of the automatic populating of the Playing overlay

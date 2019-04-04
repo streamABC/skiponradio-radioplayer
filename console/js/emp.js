@@ -1,5 +1,5 @@
 /**
- * Version: 1.2.17
+ * Version: 1.2.22
  * 
  * All intellectual property rights in this Software throughout the world belong to UK Radioplayer, 
  * rights in the Software are licensed (not sold) to subscriber stations, and subscriber stations 

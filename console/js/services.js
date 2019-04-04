@@ -1,5 +1,5 @@
 /**
- * Version: 1.2.17
+ * Version: 1.2.22
  * 
  * @name services
  * @description Cross domain get and post, receiving of cookie values
@@ -64,13 +64,17 @@ radioplayer.services = {
      */	
 	checkCookieConsent : function(callback) {
 
-		if (document.cookie.indexOf("rp-accepted-cookie-consent") != -1) {
+		if (document.cookie.indexOf("gdpr-consent") != -1) {
 			
 			// Use the locally set cookie value if available
 			radioplayer.consts.show_cookie_consent = false;
 			
 			// In case it has been lost, set session cookie to not show cookie consent
 			radioplayer.services.saveCookie("cookie-consent/s", "accepted-cookie-consent", "true", callback);
+
+			if ((/(Safari)/.test(user.browser.family))) {
+				radioplayer.services.showAnno(radioplayer.lang.general.reduced_func_anno);
+			}
 
 		} else {
 			
@@ -98,7 +102,7 @@ radioplayer.services = {
 
 		clearTimeout(radioplayer.checkCookieConsentFailTimeout);
 		
-		if (data.accepted) {
+		if (data.accepted && document.cookie.indexOf("gdpr-consent") > -1) {
 			
 			radioplayer.consts.show_cookie_consent = false;
 			if (!radioplayer.consts.force_reduced_func && !/(Safari)/.test(user.browser.family)) radioplayer.consts.reduced_func = false;
@@ -572,6 +576,7 @@ radioplayer.services = {
 		}
 
 		radioplayer.services.createExpiringCookie('rp-accepted-cookie-consent', radioplayer.consts.cookie_anno_ttl);
+		radioplayer.services.createExpiringCookie('gdpr-consent', radioplayer.consts.cookie_anno_ttl);
 
 		// Set the primed cookie, to test cross domain cookie support
 		radioplayer.services.saveCookie('cookie-consent/s', 'accepted-cookie-consent', 'true', function(){
@@ -586,7 +591,11 @@ radioplayer.services = {
 			/**
 			 * Show cookie announcement? Check cookie
 			 */
-			if (radioplayer.consts.show_cookie_anno) {
+
+			if (radioplayer.consts.reduced_func) {
+				radioplayer.services.showAnno(radioplayer.lang.general.reduced_func_anno);
+			}
+			else if (radioplayer.consts.show_cookie_anno) {
 				// Cookie anno is enabled, but is cookie set?
 
 				if (document.cookie.indexOf("rp-seen-cookie-anno") == -1) {
@@ -621,12 +630,48 @@ radioplayer.services = {
      * @method showCookieConsent
      */
 	showCookieConsent : function(){
-
-		if (/(Safari)/.test(user.browser.family)) {
+		if (/(Safari)/.test(user.browser.family) && document.cookie.indexOf("gdpr-consent") > -1) {
 			// If iOS on Safari, show an announcement explaining reduced functionality
 			radioplayer.services.showAnno(radioplayer.lang.general.reduced_func_anno);
 		} else {
-			$('.radioplayer').append('<div class="radioplayer-cookie-consent"><a href="#" class="cookie-consent-button">' + radioplayer.lang.general.cookie_consent_dismiss + '</a><div class="cookie-consent-text">' + radioplayer.lang.general.cookie_consent + '</div></div>');
+			var html = window.gdprMessage ? radioplayer.lang.general.cookie_consent + window.gdprMessage : radioplayer.lang.general.cookie_consent;
+			$('.radioplayer').append('<div class="radioplayer-cookie-consent" id="radioplayer-cookie-consent"><a href="#" class="cookie-consent-button">' + radioplayer.lang.general.cookie_consent_dismiss + '</a><div class="cookie-consent-text" id="cookie-consent-text">' + html + '</div></div>'); 
+
+			// Determine the height of the consent-text
+			var h = document.getElementById('cookie-consent-text').clientHeight || $('#cookie-consent-text').height();
+			if (h > 440) {
+				$('.radioplayer-cookie-consent').append('<div class="cookie-consent-arrow"><div class="cookie-consent-arrow-inner"></div></div>');
+
+				$('.cookie-consent-arrow').on('click', function () {
+					if ($('.cookie-consent-arrow-inner').hasClass('cookie-consent-arrow-inner-reversed')) {
+						$("#cookie-consent-text").animate({ scrollTop: 0 }, 300);
+					}
+					else {
+						$("#cookie-consent-text").animate({ scrollTop: $("#cookie-consent-text").prop("scrollHeight") }, 500);
+					}
+					
+				});
+
+				var atBottom;
+				$('.cookie-consent-text').on('scroll', function () {
+					if ($(this)[0].scrollHeight - $(this).scrollTop() == $(this).outerHeight()) {
+						if (!atBottom) {
+							atBottom = true;
+							$('.cookie-consent-arrow-inner').addClass('cookie-consent-arrow-inner-reversed');
+						}
+					}
+					else if (atBottom) {
+						atBottom = false;
+						$('.cookie-consent-arrow-inner').removeClass('cookie-consent-arrow-inner-reversed');
+					}
+				});
+			}
+
+			
+
+			$('.cookie-consent-text').css('max-height', '440px');
+			$('.cookie-consent-text').css('overflow-y', 'scroll');			
+			$('.cookie-consent-text').css('visibility', 'visible');
 
 			// Click the cross to hide cookie consent
 			$('.radioplayer-cookie-consent').on('click', 'a.cookie-consent-button', radioplayer.services.hideCookieConsent);

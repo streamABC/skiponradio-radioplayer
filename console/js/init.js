@@ -1,5 +1,5 @@
 /**
- * Version: 1.2.17
+ * Version: 1.2.22
  *
  * @name init
  * @description Initializes global variables, namespaces and sets up actions to occur when document is ready

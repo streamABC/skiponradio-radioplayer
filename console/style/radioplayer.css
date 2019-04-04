@@ -1,5 +1,5 @@
 /**
- * Version: 1.2.17
+ * Version: 1.2.22
  * 
  * WARNING - The entire console inherits from these values.
  * It is strongly recommended to not make changes to the following styling.
@@ -210,7 +210,7 @@ html.lte8 .radioplayer-globalnav .search-box #search-clear span { margin:0; posi
 .radioplayer-anno { position:absolute; top:0; left:0; width:100%; height:78px; z-index:1; }
 .radioplayer-anno:before { content:" "; position:absolute; top:0; left:0; width:100%; height:78px; background:url(../img/notification-bg.png) 0 0 repeat; z-index:-1; }
 .radioplayer-anno:after { content:" "; position:absolute; top:0; left:0; width:100%; height:78px; background:url(../img/notification-bg-tab.png) right top no-repeat; z-index:-1; }
-.radioplayer-anno .anno-text { padding:6px 10px; width:75%; height:45px; color:#fff; font-size:108%; line-height:1.2em; }
+.radioplayer-anno .anno-text { padding:6px 10px; width:75%; height:45px; color:#fff; font-size:108%; line-height:1.2em; font-family: Helvetica,Calibri,Arial,sans-serif; font-weight: normal; font-size: 15px; line-height:1.5em; }
 .radioplayer-anno .anno-text a { color:#fff; }
 .radioplayer-anno .hide-anno { display:block; position:absolute; right:8px; bottom:0; background:url(../img/sprite.png) -142px -199px no-repeat; width:26px; height:16px; text-indent:-9999px; }
 
@@ -221,15 +221,59 @@ html.lte8 .radioplayer-globalnav .search-box #search-clear span { margin:0; posi
  *
  */
  
-.radioplayer-cookie-consent { position:absolute; top:0; left:0; width:100%; z-index:1; }
-.radioplayer-cookie-consent:before { content:" "; position:absolute; top:0; left:0; width:100%; height:78px; background:url(../img/notification-bg.png) 0 0 repeat; z-index:-1; }
-.radioplayer-cookie-consent .cookie-consent-button { float:right; margin:5px; padding:8px 15px; display:block; position:absolute; right:0; background-color:#ffff00; line-height:1em; font-size:108%; color:#383838; font-weight:bold; text-decoration:none; border-radius:5px; -webkit-border-radius:5px; }
+.radioplayer-cookie-consent { position:absolute; top:0; left:0; width:100%; z-index:1; height: auto; background-color: #cc0033; min-height: 40px;}
+.radioplayer-cookie-consent:before { content:" "; position:absolute; top:0; left:0; width:100%;  z-index:-1; }
+/* .radioplayer-cookie-consent .cookie-consent-button { float:right; margin:5px; padding:8px 15px; display:block; position:absolute; right:0; background-color:#ffff00; line-height:1em; font-size:108%; color:#383838; font-weight:bold; text-decoration:none; border-radius:5px; -webkit-border-radius:5px; margin-top: 24px; display: none; } */
+.radioplayer-cookie-consent .cookie-consent-button {
+  position: absolute;
+  top: 36px;
+  right: 24px;
+  background-color: #666666;
+  color: #fff;
+  padding: 12px 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  height: 34px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+}
 .radioplayer-cookie-consent .cookie-consent-button:hover,
-.radioplayer-cookie-consent .cookie-consent-button:active { background-color:#ffff99; }
-.radioplayer-cookie-consent .cookie-consent-text { padding:6px 10px; width:82%; color:#fff; font-size:108%; line-height:1.2em; }
-.radioplayer-cookie-consent .cookie-consent-text a { color:#fff; }
+.radioplayer-cookie-consent .cookie-consent-button:active { background-color: #444; }
+.radioplayer-cookie-consent .cookie-consent-text { padding:36px 60px; width:100%; color:#fff; font-size: 14px; line-height:1.5em; box-sizing: border-box; visibility: hidden; display:block; padding-right: 200px; }
+
+.radioplayer-cookie-consent .cookie-consent-text p { font-family: Helvetica,Calibri,Arial,sans-serif; font-weight: normal; font-size: 15px; line-height:1.5em; margin-bottom: 24px; }
+
+
+.radioplayer-cookie-consent .cookie-consent-text a { color:#fff; color: rgba(255,255,255,.8); }
+.radioplayer-cookie-consent .cookie-consent-text a:hover { color: #fff; }
 .radioplayer-cookie-consent .hide-cookie-consent { display:block; position:absolute; right:8px; bottom:0; background:url(../img/sprite.png) -142px -199px no-repeat; width:26px; height:16px; text-indent:-9999px; }
- 
+ .cookie-consent-arrow {
+     position: absolute;
+     bottom: -15px;
+     left: 50%;
+     width: 30px;
+     height: 30px;
+     border-radius: 15px;
+     background-color: #fff;
+     background-color: rgba(255,255,255,.9);
+ }
+ .cookie-consent-arrow:hover {
+     cursor: pointer;
+     background-color: rgba(255,255,255,1);
+ }
+ .cookie-consent-arrow-inner {
+    background:url(../img/sprite.png) -143px 11px no-repeat;
+    width: 26px;
+    height: 21px;
+ }
+ .cookie-consent-arrow-inner-reversed {
+    background: url(../img/sprite.png) -145px -23px no-repeat;
+    width: 25px;
+    height: 12px;
+    margin-top: 7px;
+    margin-left: 2px;
+ }
  
 /**
  *
@@ -270,7 +314,7 @@ body.showing-menu .menu-container { display:block; }
 
 iframe.crossdomain-iframe  { height:1px; width:1px; position:absolute; top:0; left:-2000px;	visibility:hidden; }
 /**
- * Version: 1.2.17
+ * Version: 1.2.22
  * 
  *
  * Media Queries
@@ -591,7 +635,7 @@ iframe.crossdomain-iframe  { height:1px; width:1px; position:absolute; top:0; le
 		background-size: 70px 466px;
 	}
 }/**
- * Version: 1.2.17
+ * Version: 1.2.22
  * 
  *
  * Document   : overlay-items.css
@@ -696,7 +740,7 @@ html.lte8 .overlay-item .toggle-mystations button span { position:absolute; left
 #controls.no-volume { width:80px; }
 
 /**
- * Version: 1.2.17
+ * Version: 1.2.22
  * 
  *
  * Play / Stop / Pause
@@ -892,7 +936,7 @@ html.lte8 #toggle-mystations span { position:absolute; left:0; top:0; }
 #od-title { width:100%; position:absolute; right:4px; top:1px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; line-height:1.1em; text-align:right; }
 
 /**
- * Version: 1.2.17
+ * Version: 1.2.22
  * 
  *
  * Suggested Results
@@ -979,7 +1023,7 @@ html.lte8 #toggle-mystations span { position:absolute; left:0; top:0; }
 .error-message.no-results h1 { font-size:32px; background:url(../img/error-icons-sprite.png) 50% -200px no-repeat; }
 .error-message.fail h1 { font-size:22px; background:url(../img/error-icons-sprite.png) 50% -400px no-repeat; }
 /**
- * Version: 1.2.17
+ * Version: 1.2.22
  * 
  */
 #station-logo-link {

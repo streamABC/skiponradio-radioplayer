@@ -1,16 +1,16 @@
 /*
- * Version: 1.2.17
+ * Version: 1.2.22
  */
 #station-logo-link {
 	/**
 	 * Station Logo
 	 * Image must be 50px in height, and between 50px and 220px in width
 	 */
-	background: url(../img/station-logo.png) 0 0 no-repeat;	
+	background: url(../img/station-logo.png) 0 0 no-repeat;
 }
 
 .radioplayer-localwrapper,
-body.showing-overlay .radioplayer-head { 
+body.showing-overlay .radioplayer-head {
 	/**
 	 * Background Image or Colour
 	 * Images should be 750px width by 815px height
@@ -26,7 +26,7 @@ body.showing-overlay .radioplayer-head {
 }
 
 .playinfo span {
-	font-weight: strong;
+	font-weight: bold;
 }
 
 .radioplayer-plugin {
